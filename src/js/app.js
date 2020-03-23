@@ -7,3 +7,5 @@ someSpan.attr({
     'id': '12',
     'data-id': 'asdawd'
 });
+
+new Button('Test', $('#category'));

@@ -17,6 +17,10 @@ class Element {
         this.element.innerHTML = value;
     }
 
+    addClass() {
+        this.element.classList.add(...arguments);
+    }
+
     attr(obj) {
         for (let key in obj) {
             this.element.setAttribute(key, obj[key]);
