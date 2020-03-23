@@ -5,3 +5,10 @@ function $(selector) {
 
     return elem || false;
 }
+
+function $nD(selector) {
+    const elem = $(selector);
+    if (elem) {
+        elem.remove();
+    }
+}
