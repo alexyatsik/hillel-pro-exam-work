@@ -27,6 +27,10 @@ class Element {
         }
     }
 
+    click(handler) {
+        this.element.addEventListener('click', handler, event);
+    }
+
     getElement() {
         return this.element;
     }
