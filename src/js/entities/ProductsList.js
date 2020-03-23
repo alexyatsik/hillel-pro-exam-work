@@ -1,8 +1,8 @@
 'use strict';
 
 class ProductsList extends Element {
-    constructor() {
+    constructor(products) {
         super('div');
-        this.products = [];
+        this.products = products || [];
     }
 }
