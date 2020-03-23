@@ -2,6 +2,7 @@
 
 class ProductsList extends Element {
     constructor() {
-        super();
+        super('div');
+        this.products = [];
     }
 }
