@@ -12,4 +12,13 @@ class Element {
             parent.appendChild(this.element);
         }
     }
+
+    html(value) {
+        this.element.innerHTML = value;
+    }
+
+    getElement() {
+        return this.element;
+    }
 }
+
