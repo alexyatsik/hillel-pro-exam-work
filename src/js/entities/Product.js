@@ -44,17 +44,3 @@ class Product extends Element {
     }
 }
 
-const data = {
-    title: 'Custom Laptop Limited',
-    price: '1000',
-    iconPath: 'https://i.picsum.photos/id/985/200/300.jpg',
-    imgPath: 'https://i.picsum.photos/id/924/200/300.jpg',
-    characteristics: {
-        cpu: 'Intel I-5',
-        RAM: '8Gb',
-        HD: '120Gb'
-    }
-};
-
-const myProduct = new Product(data);
-$('#products').appendChild(myProduct.expandedView());
