@@ -12,3 +12,8 @@ function $nD(selector) {
         elem.remove();
     }
 }
+
+
+function getLocalStorage(lsName) {
+    return JSON.parse(localStorage.getItem(lsName)) || false;
+}
