@@ -4,6 +4,8 @@ class Product extends Element {
     constructor(dataObj) {
         super('div');
         this.dataObj = dataObj;
+
+        this.addClass('product');
     }
 
     listView() {
@@ -12,12 +14,15 @@ class Product extends Element {
             'src': this.dataObj.iconPath,
             'alt': `${this.dataObj.title} icon`
         });
+        img.addClass('product__image');
 
         const price = new Element('span', this.element);
         price.html(`$${this.dataObj.price}`);
+        price.addClass('product__price');
 
         const title = new Element('span', this.element);
         title.html(`${this.dataObj.title}`);
+        price.addClass('product__title');
 
         return this.element;
     }
