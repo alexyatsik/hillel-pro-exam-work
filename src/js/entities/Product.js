@@ -6,6 +6,7 @@ class Product extends Element {
         this.dataObj = dataObj;
 
         this.addClass('product');
+        this.element.dataset.id = this.dataObj.id;
     }
 
     listView() {
@@ -22,7 +23,7 @@ class Product extends Element {
 
         const title = new Element('span', this.element);
         title.html(`${this.dataObj.title}`);
-        price.addClass('product__title');
+        title.addClass('product__title');
 
         return this.element;
     }
