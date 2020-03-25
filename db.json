@@ -1,0 +1,42 @@
+{
+    "data": {
+        "categories" : {
+            "computers": [
+                {
+                    "id:": "123",
+                    "title": "Custom Laptop Limited",
+                    "price": "1000",
+                    "iconPath": "https://picsum.photos/200",
+                    "imgPath": "https://i.picsum.photos/id/924/200/300.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-5",
+                        "ram": "8Gb",
+                        "hd": "120G"
+                    }
+                }
+            ],
+            "cameras": [
+                {
+                    "id:": "123",
+                    "title": "Custom Camera 100500GPX",
+                    "price": "1000",
+                    "iconPath": "https://picsum.photos/200",
+                    "imgPath": "https://i.picsum.photos/id/924/200/300.jpg",
+                    "characteristics": {
+                        "mgpx": "50",
+                        "mirror": "yes",
+                        "convenient": "no",
+                        "other": "don't know"
+                    }
+                }
+            ],
+            "hardware": [],
+            "smartphones": [],
+            "tv": [],
+            "gadgets": [],
+            "Car electronics": [],
+            "video games": [],
+            "accesories": []
+        }
+    }
+}

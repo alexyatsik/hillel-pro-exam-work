@@ -1,7 +1,7 @@
 'use strict';
 
 function windowHandler() {
-    new ProductsList().init();
+    init();
 }
 
 function productsHandler() {
