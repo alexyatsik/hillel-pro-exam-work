@@ -1,12 +1,14 @@
 'use strict';
 
 class Product extends Element {
-    constructor(dataObj) {
+    constructor(dataObj, category) {
         super('div');
         this.dataObj = dataObj;
+        this.category = category;
 
         this.addClass('product');
         this.element.dataset.id = this.dataObj.id;
+        this.element.dataset.cat = this.category;
         this.click(productHandler);
     }
 
@@ -44,7 +46,7 @@ class Product extends Element {
 
         const characteristics = new Element('ul', this.element);
         for (let key in this.dataObj.characteristics) {
-            new Element('li', characteristics.getElement()).html(`${key.toUpperCase()} : ${this.dataObj.characteristics[key]}.`)
+            new Element('li', characteristics.getElement()).html(`${capitalize(key)} : ${this.dataObj.characteristics[key]}.`)
         }
 
         const price = new Element('span', this.element);

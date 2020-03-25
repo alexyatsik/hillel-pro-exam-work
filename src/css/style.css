@@ -18,10 +18,11 @@ body {
 
     height: 100px;
     width: 50px;
-
     margin: 5px;
 
     font-size: 10px;
+
+    overflow: hidden;
 }
 
 .product:hover {

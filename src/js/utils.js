@@ -21,25 +21,7 @@ function addToLocalStorage(lsName, item) {
     localStorage.setItem(lsName, JSON.stringify(item));
 }
 
-function init() {
-    fetch('../../db.json')
-        .then(res => {
-            return res.json();
-        })
-        .then(res => {
-            const db = res.data;
-            addToLocalStorage('internetStorageDb', db.categories);
-            const products = [];
-
-            for (let key in db.categories) {
-                for (let element of db.categories[key]) {
-                    products.push(new Product(element));
-                }
-            }
-
-            new ProductsList(products).init();
-        })
-        .catch(err => {
-            console.log('rejected', err);
-        })
+function capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1);
 }
+
