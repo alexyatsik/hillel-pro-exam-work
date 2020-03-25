@@ -17,6 +17,10 @@ function getLocalStorage(lsName) {
     return JSON.parse(localStorage.getItem(lsName)) || false;
 }
 
+function addToLocalStorage(lsName, item) {
+    localStorage.setItem(lsName, JSON.stringify(item));
+}
+
 function init() {
     fetch('../../db.json')
         .then(res => {
@@ -24,6 +28,7 @@ function init() {
         })
         .then(res => {
             const db = res.data;
+            addToLocalStorage('internetStorageDb', db.categories);
             const products = [];
 
             for (let key in db.categories) {

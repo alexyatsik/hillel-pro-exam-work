@@ -11,7 +11,6 @@ class ProductsList extends Element {
 
         this.attr({'id': 'product-list'});
         this.addClass('product-list');
-        this.click(productsHandler);
         $nR('#products').appendChild(this.element);
     }
 
@@ -27,38 +26,16 @@ class ProductsList extends Element {
     }
 
     slider() {
+        const styles = window.getComputedStyle($nR('.product'));
+        const itemWidth = parseInt(styles.width) + parseInt(styles.margin) * 2;
+        const slidesPerRow = parseInt($nR('#products').offsetWidth / itemWidth);
         $('#product-list').slick({
             dots: true,
             arrows: false,
             infinite: false,
-            variableWidth: true,
             speed: 300,
-            //slidesToShow: 6,
             rows: 2,
-            slidesPerRow: 4,
-            responsive: [
-                {
-                breakpoint: 1024,
-                settings: {
-                    //slidesToShow: 3,
-                    //slidesToScroll: 3,
-                }
-                },
-                {
-                breakpoint: 600,
-                settings: {
-                    //slidesToShow: 2,
-                    //slidesToScroll: 2
-                }
-                },
-                {
-                breakpoint: 480,
-                settings: {
-                    //slidesToShow: 1,
-                    //slidesToScroll: 1
-                }
-                }
-            ]
+            slidesPerRow: slidesPerRow,
         });
     }
 }

@@ -36,3 +36,7 @@ body {
 .product__title {
     text-align: center;
 }
+
+.slick-dots li button:before {
+    font-size: 12px;
+}

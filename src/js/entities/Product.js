@@ -7,6 +7,7 @@ class Product extends Element {
 
         this.addClass('product');
         this.element.dataset.id = this.dataObj.id;
+        this.click(productHandler);
     }
 
     listView() {
