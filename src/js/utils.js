@@ -23,7 +23,16 @@ function init() {
             return res.json();
         })
         .then(res => {
-            console.log(res);
+            const db = res.data;
+            const products = [];
+
+            for (let key in db.categories) {
+                for (let element of db.categories[key]) {
+                    products.push(new Product(element));
+                }
+            }
+
+            new ProductsList(products).init();
         })
         .catch(err => {
             console.log('rejected', err);

@@ -25,7 +25,10 @@ class Product extends Element {
         title.html(`${this.dataObj.title}`);
         title.addClass('product__title');
 
-        return this.element;
+        const wrapper = new Element('div').getElement();
+        this.append(wrapper);
+
+        return wrapper;
     }
 
     expandedView() {
