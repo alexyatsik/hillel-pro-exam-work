@@ -4,10 +4,12 @@ function windowHandler() {
     init();
 }
 
-function productsHandler() {
-    if (
-        event.target.parentElement.classList.contains('product') ||
-        event.target.classList.contains('product')) {
-            console.log(new Product().expandedView());
+function productHandler() {
+    const db = getLocalStorage('internetStorageDb');
+    for (let element of db[this.dataset.cat]) {
+        if (element.id === this.dataset.id) {
+            //new Modal(new Product(element).expandedView());
+            console.log('Modal window must be called');
+        }
     }
 }

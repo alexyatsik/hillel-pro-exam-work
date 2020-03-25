@@ -3,11 +3,11 @@
         "categories" : {
             "computers": [
                 {
-                    "id:": "123",
+                    "id": "123",
                     "title": "Custom Laptop Limited",
                     "price": "1000",
-                    "iconPath": "https://picsum.photos/200",
-                    "imgPath": "https://i.picsum.photos/id/924/200/300.jpg",
+                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/1/200/300.jpg",
                     "characteristics": {
                         "cpu": "Intel I-5",
                         "ram": "8Gb",
@@ -17,11 +17,11 @@
             ],
             "cameras": [
                 {
-                    "id:": "123",
+                    "id": "124",
                     "title": "Custom Camera 100500GPX",
                     "price": "1000",
-                    "iconPath": "https://picsum.photos/200",
-                    "imgPath": "https://i.picsum.photos/id/924/200/300.jpg",
+                    "iconPath": "https://i.picsum.photos/id/2/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/2/200/300.jpg",
                     "characteristics": {
                         "mgpx": "50",
                         "mirror": "yes",
@@ -30,13 +30,111 @@
                     }
                 }
             ],
-            "hardware": [],
-            "smartphones": [],
-            "tv": [],
-            "gadgets": [],
-            "Car electronics": [],
-            "video games": [],
-            "accesories": []
+            "hardware": [
+                {
+                    "id": "125",
+                    "title": "Bosch PBH 2100 RE",
+                    "price": "50",
+                    "iconPath": "https://i.picsum.photos/id/3/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/3/200/300.jpg",
+                    "characteristics": {
+                        "rotation speed": "2300",
+                        "type": "SDS+",
+                        "Hit frequency": "5800"
+                    }
+                }
+            ],
+            "smartphones": [
+                {
+                    "id": "126",
+                    "title": "Samsung Galaxy M31",
+                    "price": "55",
+                    "iconPath": "https://i.picsum.photos/id/4/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/4/200/300.jpg",
+                    "characteristics": {
+                        "display": "6.4''",
+                        "resolution": "2340x1080",
+                        "matrix type": "Super AMOLED",
+                        "material": "Glass"
+                    }
+                }
+            ],
+            "tv": [
+                {
+                    "id": "127",
+                    "title": "Samsung UE43N5000AUXUA",
+                    "price": "60",
+                    "iconPath": "https://i.picsum.photos/id/5/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/5/200/300.jpg",
+                    "characteristics": {
+                        "display": "43''",
+                        "resolution": "1920x1080",
+                        "wi-fi": "Without Wi-Fi",
+                        "color": "Black"
+                    }
+                }
+            ],
+            "gadgets": [
+                {
+                    "id": "128",
+                    "title": "Amazfit GTS",
+                    "price": "100",
+                    "iconPath": "https://i.picsum.photos/id/6/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/6/200/300.jpg",
+                    "characteristics": {
+                        "type": "Smart clock",
+                        "matrix": "AMOLED",
+                        "resolution": "348x442",
+                        "display": "1.65''"
+                    }
+                }
+            ],
+            "Car electronics": [
+                {
+                    "id": "129",
+                    "title": "Playme ELVA",
+                    "price": "40",
+                    "iconPath": "https://i.picsum.photos/id/7/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/7/200/300.jpg",
+                    "characteristics": {
+                        "gps": "no",
+                        "sensor": "NTK96220",
+                        "resolution": "1920x1080",
+                        "Observation angle": "140deg"
+                    }
+                }
+            ],
+            "video games": [
+                {
+                    "id": "130",
+                    "title": "PlayStation 4",
+                    "price": "400",
+                    "iconPath": "https://i.picsum.photos/id/8/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/8/200/300.jpg",
+                    "characteristics": {
+                        "cpu": "AMD Jaguar",
+                        "ram": "8 Gb GDDR5",
+                        "hard drive": "1 Tb",
+                        "video": "AMD 1.84 Tf on Radeon's base of the next generation"
+                    }
+                }
+            ],
+            "accesories": [
+                {
+                    "id": "131",
+                    "title": "Logitech Wireless Presenter R400",
+                    "price": "70",
+                    "iconPath": "https://i.picsum.photos/id/9/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/9/200/300.jpg",
+                    "characteristics": {
+                        "type": "Presenter",
+                        "compatibility": "Vista, 7, 8, 10m MacOS",
+                        "weight": "57g",
+                        "size": "37.8 x 115.5 x 27.4 mm",
+                        "color": "Black"
+                    }
+                }
+            ]
         }
     }
 }
