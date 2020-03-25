@@ -13,7 +13,19 @@ function $nD(selector) {
     }
 }
 
-
 function getLocalStorage(lsName) {
     return JSON.parse(localStorage.getItem(lsName)) || false;
+}
+
+function init() {
+    fetch('../../db.json')
+        .then(res => {
+            return res.json();
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log('rejected', err);
+        })
 }
