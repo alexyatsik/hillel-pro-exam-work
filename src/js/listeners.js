@@ -1,12 +1,13 @@
 'use strict';
 
 function windowHandler() {
+    const title = 'MAIN TITLE';
+    const content = 'Here is some important Content'
+    new Modal(title,content);
     $nR('body').classList.add('body-modal-window');
-    const content2 = 'Some new content';
-    new Modal(content2);
 }
 
 function modalWindowCloseHandler(){
-    $nD('.modal-window');
+    $nD('.modal-window-wrapper');
     $nR('body').removeAttribute('class','body-modal-window');
 }
