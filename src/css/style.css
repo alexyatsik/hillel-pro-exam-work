@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CART */
 .cart-wrap {
     position: relative;
@@ -15,4 +16,48 @@
 
     width: 18px;
     height: 18px;
+=======
+* {
+    outline: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.products {
+    width: 500px;
+    margin: 0 auto;
+}
+   
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100px;
+    width: 50px;
+    margin: 5px;
+
+    font-size: 10px;
+
+    overflow: hidden;
+}
+
+.product:hover {
+    cursor: pointer;
+}
+
+.product__price {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.product__title {
+    text-align: center;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+>>>>>>> 2502d29515588020b836293bceed01be069e0ec6
 }

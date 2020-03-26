@@ -9,6 +9,9 @@ class Element {
 
     append(parent) {
         if (parent) {
+            if (parent instanceof Element) {
+                parent = parent.getElement();
+            } 
             parent.appendChild(this.element);
         }
     }
@@ -28,7 +31,7 @@ class Element {
     }
 
     click(handler) {
-        this.element.addEventListener('click', handler, event);
+        this.element.addEventListener('click', handler);
     }
 
     getElement() {

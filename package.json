@@ -1,0 +1,24 @@
+{
+  "name": "examination-work",
+  "version": "1.0.0",
+  "description": "An Internet Store",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexyatsik/hillel-pro-exam-work.git"
+  },
+  "author": "Alexeii Yatsenko, Vlad Potapov, Michael Neikovich, Maksym Suprunenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexyatsik/hillel-pro-exam-work/issues"
+  },
+  "homepage": "https://github.com/alexyatsik/hillel-pro-exam-work#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "serve": "^11.3.0",
+    "slick-carousel": "^1.8.1"
+  }
+}
