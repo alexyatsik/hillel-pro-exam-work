@@ -6,13 +6,14 @@ class Product extends Component {
         this.dataObj = dataObj;
         this.category = category;
 
-        this.addClass('product');
         this.element.dataset.id = this.dataObj.id;
         this.element.dataset.cat = this.category;
-        this.click(productHandler);
     }
 
     listView() {
+        this.addClass('product');
+        this.click(productHandler);
+
         const img = new Element('img', this.element);
         img.attr({
             'src': this.dataObj.iconPath,
@@ -46,13 +47,21 @@ class Product extends Component {
 
         const characteristics = new Element('ul', this.element);
         for (let key in this.dataObj.characteristics) {
-            new Element('li', characteristics.getElement()).html(`${capitalize(key)} : ${this.dataObj.characteristics[key]}.`)
+            new Element(
+                'li', 
+                characteristics.getElement()
+            ).html(
+                `${capitalize(key)} : ${this.dataObj.characteristics[key]}.`
+            );
         }
 
         const price = new Element('span', this.element);
         price.html(`$${this.dataObj.price}`);
 
-        return this.element.innerHTML;
+        new Quantifier('productQuantity', this.element);
+        new Button('Add to cart', this.element).click(productAddToCartHandler);
+
+        return this.element;
     }
 
     getTitle() {
