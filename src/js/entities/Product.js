@@ -2,7 +2,7 @@
 
 class Product extends Component {
     constructor(dataObj, category) {
-        super(/*'div'*/);
+        super();
         this.dataObj = dataObj;
         this.category = category;
 
@@ -52,7 +52,11 @@ class Product extends Component {
         const price = new Element('span', this.element);
         price.html(`$${this.dataObj.price}`);
 
-        return this.element;
+        return this.element.innerHTML;
+    }
+
+    getTitle() {
+        return this.dataObj.title;
     }
 }
 
