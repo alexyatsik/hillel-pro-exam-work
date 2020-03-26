@@ -16,3 +16,12 @@ function $nD(selector) {
 function getLocalStorage(lsName) {
     return JSON.parse(localStorage.getItem(lsName)) || false;
 }
+
+function addToLocalStorage(lsName, item) {
+    localStorage.setItem(lsName, JSON.stringify(item));
+}
+
+function capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1);
+}
+

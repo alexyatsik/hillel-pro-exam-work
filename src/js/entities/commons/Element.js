@@ -31,7 +31,7 @@ class Element {
     }
 
     click(handler) {
-        this.element.addEventListener('click', handler, event);
+        this.element.addEventListener('click', handler);
     }
 
     getElement() {
