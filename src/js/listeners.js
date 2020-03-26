@@ -1,7 +1,13 @@
 'use strict';
 
 function windowHandler() {
+    $nR('body').classList.add('body-modal-window');
     init();
+}
+
+function modalWindowCloseHandler(){
+    $nD('.modal-window-wrapper');
+    $nR('body').removeAttribute('class','body-modal-window');
 }
 
 function productHandler() {
