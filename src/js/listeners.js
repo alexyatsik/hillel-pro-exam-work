@@ -1,8 +1,8 @@
 'use strict';
 
 function windowHandler() {
-    const title = 'MAIN TITLE';
-    const content = 'Here is some important Content'
+    const title = 'MAIN TITLE'; // TEST
+    const content = 'Here is some important Content'; // TEST
     new Modal(title,content);
     $nR('body').classList.add('body-modal-window');
 }
