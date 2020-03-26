@@ -9,6 +9,9 @@ class Element {
 
     append(parent) {
         if (parent) {
+            if (parent instanceof Element) {
+                parent = parent.getElement();
+            } 
             parent.appendChild(this.element);
         }
     }

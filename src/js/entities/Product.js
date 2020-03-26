@@ -1,8 +1,8 @@
 'use strict';
 
-class Product extends Element {
+class Product extends Component {
     constructor(dataObj, category) {
-        super('div');
+        super(/*'div'*/);
         this.dataObj = dataObj;
         this.category = category;
 

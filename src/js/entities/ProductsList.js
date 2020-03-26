@@ -1,8 +1,8 @@
 'use strict';
 
-class ProductsList extends Element {
+class ProductsList extends Component {
     constructor(products) {
-        super('div');
+        super(/*'div'*/);
         this.products = products || [];
 
         // if list exists - delete
