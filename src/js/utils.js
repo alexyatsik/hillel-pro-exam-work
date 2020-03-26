@@ -21,6 +21,23 @@ function addToLocalStorage(lsName, item) {
     localStorage.setItem(lsName, JSON.stringify(item));
 }
 
+function addItemToLocalStorage(lsName, item) {
+    let db = getLocalStorage(lsName);
+    if (!db) {
+        db = [item];
+    } else {
+        for (let element of db) {
+            if (element.id === item.id) {
+                element.quantity = parseInt(element.quantity) + parseInt(item.quantity);
+                addToLocalStorage(lsName, db);
+                return;
+            } 
+        }
+        db.push(item);
+    }
+    addToLocalStorage(lsName, db);
+}
+
 function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
 }
