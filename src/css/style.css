@@ -18,10 +18,6 @@
     left: calc(50% - 400px);
     background-color: rgb(211, 210, 210);
 }
-.modal-window__none{
-    display: none;
-}
-
 
 #close-btn{
     position: absolute;

@@ -1,16 +1,12 @@
 'use strict';
 
 function windowHandler() {
-
-}
-
-function modalWindowOpenHandler(){
-    $('body').classList.add('body-modal-window');
-    $('#modal').innerText = '';
-    new Modal();
+    $nR('body').classList.add('body-modal-window');
+    const content2 = 'Some new content';
+    new Modal(content2);
 }
 
 function modalWindowCloseHandler(){
-    $('body').classList.remove('body-modal-window');
-    $('#modal').classList.add('modal-window__none');
+    $nD('.modal-window');
+    $nR('body').removeAttribute('class','body-modal-window');
 }
