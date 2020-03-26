@@ -2,7 +2,7 @@
 
 class ProductsList extends Component {
     constructor(products) {
-        super(/*'div'*/);
+        super();
         this.products = products || [];
 
         // if list exists - delete
