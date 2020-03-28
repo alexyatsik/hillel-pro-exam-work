@@ -35,22 +35,29 @@ class Feedback extends Component {
             'id': 'feedbackForm'
         })
 
+        const tip = new Element('div', form);
+        tip.addClass('feedback-tip');
+        tip.html(`
+            * First, Second/Last name<br />
+            ** Must be at least 10 symbols
+        `);
+
         const author = new Input('feedbackAuthor', form);
         author.attr({
-            'placeholder': 'Enter your name'
+            'placeholder': '* John Doe'
         });
 
         const description = new Element('textarea', form);
         description.attr({
-            'placeholder': 'Enter the feedback',
+            'placeholder': '** Enter the feedback',
             'name': 'feedbackDescription'
         });
 
-        const addFeedback = new Button('Add feedback', form);
-        addFeedback.attr({
+        const addFeedbackBtn = new Button('Add feedback', form);
+        addFeedbackBtn.attr({
             'data-id': this.itemId
         });
-        addFeedback.click(this.addFeedback);
+        addFeedbackBtn.click(this.addFeedback);
     }
 
     addFeedback() {
@@ -60,10 +67,31 @@ class Feedback extends Component {
             description: form.feedbackDescription.value
         }
 
+        if (!isInputCorrect({ author: form.feedbackAuthor, description: form.feedbackDescription })) {
+            return;
+        }
+
         addItemToFeedbacksInLS(this.dataset.id, feedback);
 
         $nD('.modal-window-wrapper');
         document.body.classList.remove('body-modal-window');
+
+        function isInputCorrect(inputsObj) {
+            let isInputCorrect = true;
+
+            const regExp = {
+                author: /^[A-Z][a-z]{1,30} [A-Z][a-z]{1,30}$/,
+                description: /^.{10,}$/
+            }
+
+            for (let key in inputsObj) {
+                if (!regExp[key].test(inputsObj[key].value)) {
+                    isInputCorrect = false;
+                }
+            }
+
+            return isInputCorrect;
+        }
     }
 
     showFeedbacksInterface() {
@@ -119,7 +147,6 @@ class Feedback extends Component {
             }
             content.html(slides[currentSlide].getElement().innerHTML);
         });
-
     }
 
     getFeedbacks() {

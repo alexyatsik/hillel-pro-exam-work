@@ -32,6 +32,11 @@ form {
     display: flex;
 }
 
+.feedback-tip {
+    font-size: 8px;
+    font-style: italic;
+}
+
 .body-modal-window{
     overflow-y: hidden;
 }
