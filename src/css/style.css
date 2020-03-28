@@ -21,10 +21,15 @@ form {
     font-size: 8px;
 }
 
-.feedback-component {
+.feedback-component, 
+.product-feedbacks {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.feedback-wrapper {
+    display: flex;
 }
 
 .body-modal-window{
