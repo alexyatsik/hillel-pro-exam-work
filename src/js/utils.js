@@ -40,18 +40,25 @@ function addItemToCartInLS(lsName, item) {
 
 function addItemToFeedbacksInLS(itemId, feedback) {
     const DB_NAME = 'feedbacks'
+    const composedFeedback = { 
+        id: itemId,
+        feedbacks: [feedback]
+    }
     let db = getLocalStorage(DB_NAME);
+
     if (!db) {
-        db = [{ 
-                id: itemId,
-                feedbacks: [feedback]
-        }];
+        db = [composedFeedback];
     } else {
+        let isNew = true;
         for (let element of db) {
             if (element.id === itemId) {
+                isNew = false;
                 element.feedbacks.push(feedback);
                 break;
-            }
+            } 
+        }
+        if (isNew) {
+            db.push(composedFeedback);
         }
     }
     addToLocalStorage(DB_NAME, db);

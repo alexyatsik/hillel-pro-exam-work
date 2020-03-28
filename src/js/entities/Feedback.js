@@ -8,36 +8,50 @@ class Feedback extends Component {
 
         this.addClass('feedback-component');
 
-        const author = new Input('feedbackAuthor', this.element);
+        const form = new Element('form', this.element);
+        form.attr({
+            'id': 'feedbackForm'
+        })
+
+        const author = new Input('feedbackAuthor', form);
         author.attr({
             'placeholder': 'Enter your name'
         });
 
-        const description = new Element('textarea', this.element);
+        const description = new Element('textarea', form);
         description.attr({
-            'placeholder': 'Enter the feedback'
+            'placeholder': 'Enter the feedback',
+            'name': 'feedbackDescription'
         });
 
+        const addFeedback = new Button('Add feedback', form);
+        addFeedback.attr({
+            'data-id': this.itemId
+        });
+        addFeedback.click(this.addFeedback);
     }
 
     getFeedbacksFromLS() {
         const db = getLocalStorage('feedbacks');
+        if (!db) {
+            return false;
+        }
 
         for (let element of db) {
             if (element.id === this.itemId) {
                 return element.feedbacks;
             }
         }
-        return false;
     }
 
-    addFeedback(author, description) {
+    addFeedback() {
+        const form = document.forms.feedbackForm;
         const feedback = {
-            author,
-            description
+            author: form.feedbackAuthor.value,
+            description: form.feedbackDescription.value
         }
 
-        addItemToFeedbacksInLS(this.itemId, feedback);
+        addItemToFeedbacksInLS(this.dataset.id, feedback);
     }
 
     getFeedbacks() {
