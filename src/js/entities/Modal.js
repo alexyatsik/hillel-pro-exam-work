@@ -1,6 +1,8 @@
 class Modal extends Component {
     constructor(title, content){
         super(document.body);
+        $nD('.modal-window-wrapper');
+
         document.body.classList.add('body-modal-window');
         this.addClass('modal-window-wrapper');
 

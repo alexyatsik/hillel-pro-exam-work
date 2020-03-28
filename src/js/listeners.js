@@ -33,7 +33,11 @@ function productAddToCartHandler() {
         quantity: userQuantity
     }
 
-    addItemToLocalStorage('cart', item);
+    addItemToCartInLS('cart', item);
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
+}
+
+function callFeedbacksHandler() {
+    new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }

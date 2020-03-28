@@ -1,8 +1,8 @@
 'use strict';
 
-class Quantifier extends Element {
+class Quantifier extends Component {
     constructor(name, parent) {
-        super('div', parent); 
+        super(parent); 
         const form = new Element('form', this);
         form.attr({
             'id': `${name}Form`

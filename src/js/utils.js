@@ -21,7 +21,7 @@ function addToLocalStorage(lsName, item) {
     localStorage.setItem(lsName, JSON.stringify(item));
 }
 
-function addItemToLocalStorage(lsName, item) {
+function addItemToCartInLS(lsName, item) {
     let db = getLocalStorage(lsName);
     if (!db) {
         db = [item];
@@ -36,6 +36,32 @@ function addItemToLocalStorage(lsName, item) {
         db.push(item);
     }
     addToLocalStorage(lsName, db);
+}
+
+function addItemToFeedbacksInLS(itemId, feedback) {
+    const DB_NAME = 'feedbacks'
+    const composedFeedback = { 
+        id: itemId,
+        feedbacks: [feedback]
+    }
+    let db = getLocalStorage(DB_NAME);
+
+    if (!db) {
+        db = [composedFeedback];
+    } else {
+        let isNew = true;
+        for (let element of db) {
+            if (element.id === itemId) {
+                isNew = false;
+                element.feedbacks.push(feedback);
+                break;
+            } 
+        }
+        if (isNew) {
+            db.push(composedFeedback);
+        }
+    }
+    addToLocalStorage(DB_NAME, db);
 }
 
 function capitalize(string) {
