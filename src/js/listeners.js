@@ -4,7 +4,7 @@ function windowHandler() {
     init();
 }
 
-function modalWindowCloseHandler(){
+function modalWindowCloseHandler() {
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
 }
@@ -33,7 +33,7 @@ function productAddToCartHandler() {
         quantity: userQuantity
     }
 
-    addItemToLocalStorage('cart', item);
+    addItemToCartInLS('cart', item);
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
 }

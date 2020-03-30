@@ -21,7 +21,7 @@ function addToLocalStorage(lsName, item) {
     localStorage.setItem(lsName, JSON.stringify(item));
 }
 
-function addItemToLocalStorage(lsName, item) {
+function addItemToCartInLS(lsName, item) {
     let db = getLocalStorage(lsName);
     if (!db) {
         db = [item];

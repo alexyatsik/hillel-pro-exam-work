@@ -15,8 +15,16 @@ function init() {
                     products.push(new Product(element, key));
                 }
             }
-
             new ProductsList(products).init();
+
+            const filters = [];
+            for(let key in db.categories){
+                for(let elem of db.categories[key]){
+                    const characteristics = elem.characteristics;
+                    filters.push(characteristics)
+                }
+            }
+            new Filter(filters).init();
         })
         .catch(err => {
             console.log('rejected', err);
