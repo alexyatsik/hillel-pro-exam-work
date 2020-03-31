@@ -1,14 +1,30 @@
 class Filter extends Component {
-    constructor(filters){
+    constructor(category){
         super();
         // this.filters = filters || [];
-        this.drawFilter(filters)
+        this.drawFilter(category)
     } 
 
-    drawFilter(array){
+    drawFilter(category){
+        for(let key in category){
+            console.log(key);
+            const filterBox = new Component($nR('#filter'));
+            filterBox.addClass('filter-category-wrap');
+            
+            for(let i = 0; i < category[key].length; i++){
+                const characteristics = category[key][i].characteristics;
+                // console.log(characteristics)
+
+                for(let elem in characteristics){
+                    console.log(`${elem}: ${characteristics[elem]}`)
+                }
+            }
+        }
+
+
         for(let i = 0; i < array.length; i++){
             const filterBox = new Component($nR('#filter'));
-            filterBox.addClass('filter-object-wrap');
+            filterBox.addClass('filter-category-wrap');
 
             for(let key in array[i]){
                 const filterItemHead = new Element('h3', filterBox);

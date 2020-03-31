@@ -17,14 +17,12 @@ function init() {
             }
             new ProductsList(products).init();
 
-            const filters = [];
-            for(let key in db.categories){
-                for(let elem of db.categories[key]){
-                    const characteristics = elem.characteristics;
-                    filters.push(characteristics)
-                }
+
+            const categoryObj = {};
+            for(let key in db){
+                categoryObj.category = db[key];
             }
-            new Filter(filters).init();
+            new Filter(categoryObj.category).init();
         })
         .catch(err => {
             console.log('rejected', err);

@@ -25,6 +25,18 @@
                         "ram": "32Gb",
                         "hd": "2TR"
                     }
+                },
+                {
+                    "id": "12223",
+                    "title": "LENOVO Laptop Limited",
+                    "price": "800",
+                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-3",
+                        "ram": "8Gb",
+                        "hd": "500GB"
+                    }
                 }
             ],
             "cameras": [
