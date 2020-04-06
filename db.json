@@ -11,7 +11,7 @@
                     "characteristics": {
                         "cpu": "Intel I-5",
                         "ram": "8Gb",
-                        "hd": "120G"
+                        "hd": "120Gb"
                     }
                 },
                 {
@@ -35,7 +35,7 @@
                     "characteristics": {
                         "cpu": "Intel I-3",
                         "ram": "8Gb",
-                        "hd": "500GB"
+                        "hd": "500Gb"
                     }
                 }
             ],

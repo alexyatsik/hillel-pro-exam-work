@@ -22,7 +22,7 @@ function init() {
             for(let key in db){
                 categoryObj.category = db[key];
             }
-            new Filter(categoryObj.category).init();
+            new Filter(categoryObj.category.computers).init(); // Remove ".computers" later !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         })
         .catch(err => {
             console.log('rejected', err);
