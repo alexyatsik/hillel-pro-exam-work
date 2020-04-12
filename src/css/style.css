@@ -104,3 +104,28 @@ form {
 .slick-dots li button:before {
     font-size: 12px;
 }
+
+/* FILTERS */
+
+.filter{
+    width: 200px;
+    margin: 20px;
+}
+
+.filter-item__list{
+    list-style: none;
+    padding: 0;
+}
+
+.filter-item__value{
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.filter-item__value:hover{
+    background-color: #dbdbdb;
+}
+.clicked-filter{
+    background-color: #dbdbdb;
+}

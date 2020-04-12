@@ -6,15 +6,15 @@ class Filter extends Component {
         const filterObject = this.getFilterObject(category);
         this.drawFilters(filterObject);
         this.getProductsFromFilter(category);
-        // console.log(test)
+        this.toggleClass();
     }
 
     getFilterObject(currentCategory) {
         const filtersCollection = {};
         const filtersCollectionKey = new Set();
 
-        currentCategory.forEach((elem) => {
-            Object.keys(elem.characteristics).forEach((key) => {
+        currentCategory.forEach((obj) => {
+            Object.keys(obj.characteristics).forEach((key) => {
                 filtersCollectionKey.add(key);
             })
         });
@@ -23,10 +23,10 @@ class Filter extends Component {
             filtersCollection[keyMap] = new Set();
         });
 
-        currentCategory.forEach((elem) => {
+        currentCategory.forEach((obj) => {
             filtersCollectionKey.forEach((keyMap) => {
-                if (elem.characteristics[keyMap]) {
-                    filtersCollection[keyMap].add(elem.characteristics[keyMap]);
+                if (obj.characteristics[keyMap]) {
+                    filtersCollection[keyMap].add(obj.characteristics[keyMap]);
                 }
             })
         })
@@ -53,33 +53,51 @@ class Filter extends Component {
         }
     }
 
-
     getProductsFromFilter(currentCategory) {
         const filtredProductsCollection = new Set();
         let filtredProductsArray;
-
         let itemList = document.querySelectorAll('.filter-item__list');
 
         itemList.forEach(item => {
             item.addEventListener('click', e => {
                 let target = e.target.innerText;
-                console.log(target)
-
+                
                 currentCategory.forEach(obj => {
-                    let object = obj;
-                    for (let key in object.characteristics) {
-                        if (target === object.characteristics[key] && !filtredProductsCollection.has(object)) {
-                            filtredProductsCollection.add(object);
-                            filtredProductsArray = Array.from(filtredProductsCollection);
-                        } else if (target === object.characteristics[key] && filtredProductsCollection.has(object)) {
-                            filtredProductsCollection.delete(object);
-                            filtredProductsArray = Array.from(filtredProductsCollection);
+                    for (let key in obj.characteristics) {
+                        if (target === obj.characteristics[key] && !filtredProductsCollection.has(obj)) {
+                            filtredProductsCollection.add(obj);
+                            return filtredProductsArray = Array.from(filtredProductsCollection);
+                        } else if (target === obj.characteristics[key] && filtredProductsCollection.has(obj)) {
+                            filtredProductsCollection.delete(obj);
+                            return filtredProductsArray = Array.from(filtredProductsCollection);
                         }
-                        // return filtredProductsArray;
                     }
                 })
-                console.log(filtredProductsArray)
+
+                let finalyProductArray = [];
+
+                for(let elem of filtredProductsArray){  
+                    finalyProductArray.push(new Product(elem, currentCategory)); 
+                }
+
+                if(filtredProductsArray.length === 0){
+                    for(let obj of currentCategory){
+                        finalyProductArray.push(new Product(obj,currentCategory)); 
+                    }
+                }
+
+                new ProductsList(finalyProductArray).init();
             })
         });
+    }
+
+    toggleClass(){
+        let itemList = document.querySelectorAll('.filter-item__list');
+        itemList.forEach(item => {
+            item.addEventListener('click', e => {
+                let target = e.target;
+                target.classList.toggle('clicked-filter');
+            })
+        })
     }
 }
