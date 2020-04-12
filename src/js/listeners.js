@@ -4,7 +4,7 @@ function windowHandler() {
     init();
 }
 
-function modalWindowCloseHandler(){
+function modalWindowCloseHandler() {
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
 }
