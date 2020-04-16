@@ -13,10 +13,11 @@ class Cart extends Element {
             'src': 'src/images/cart-icon.png'
         }); 
         const imageButton = $nR('#cart-image-button');
-        imageButton.addEventListener('click', this.showCartInterface);
+        imageButton.addEventListener('click',this.showCartInterface);
 
-        let itemsQuantity;                                              // (FOR TESTING) items' quantity in the cart
-        this.createImageCounterBox(itemsQuantity);                      // takes the value of items' quantity in the cart
+        let itemsQuantity = 1;                                         // (FOR TESTING) items' quantity in the cart
+        this.createImageCounterBox(itemsQuantity);                     // takes the value of items' quantity in the cart
+
     }
 
     createImageButton(attributes) {
@@ -36,24 +37,51 @@ class Cart extends Element {
         }
     }
 
-    showCartInterface(itemsQuantity) {   
-        const cartContent = new Element('div', $nR('#cart-wrap'));      // $nR('.modal-window') => $nR('#cart-wrap') = WTF ?!
+    showCartInterface = () => {   
+        let totalOrderSum = 0;
+
+        const cartContent = new Element('div', $nR('#cart-wrap'));       // $nR('.modal-window') => $nR('#cart-wrap') = WTF ?!
         cartContent.addClass('cart__content-box');
         cartContent.attr({'id': 'cart-contentBox'});
-                  
-        // const itemsInCart = [                                           // (FOR TESTING) items that get to the cart
-        //     { id: '123', name: 'Custom Laptop Limited', price: '1000' },
-        //     { id: '124', name: 'Custom Camera 100500GPX', price: '1000' },
-        // ];                     
-
+                    
         const dataBase = getLocalStorage('internetStorageDb');
 
         const cartItemList = new Element('table', cartContent);
         cartItemList.attr({'id': 'cart-itemList'});
         cartItemList.addClass('cart__item-list');
 
+        const cartHeadRow = new Element('tr', cartItemList);
+        cartHeadRow.addClass('cart__cell--heading');
+
+        const cartHeadProductName = new Element('th', cartHeadRow);
+        cartHeadProductName.addClass('cart__cell--heading');
+        cartHeadProductName.html('Product Name');
+
+        const cartHeadProductQuantity = new Element('th', cartHeadRow);
+        cartHeadProductQuantity.addClass('cart__cell--heading');
+        cartHeadProductQuantity.html('Quantity');
+
+        const cartHeadProductPrice = new Element('th', cartHeadRow);
+        cartHeadProductPrice.addClass('cart__cell--heading');
+        cartHeadProductPrice.html('Price');
+
+        const cartHeadProductTotalPrice = new Element('th', cartHeadRow);
+        cartHeadProductTotalPrice .addClass('cart__cell--heading');
+        cartHeadProductTotalPrice.html('Total Price');
+
+        // const totalOrderRow = new Element('tr', cartContent);
+        // totalOrderRow.addClass('cart__item--total-order-sum');
+        // totalOrderRow.html(`Total order price: ${totalOrderSum}`);
+
+        const cartConfirmOrder = new Button('Checkout', cartContent);
+        cartConfirmOrder.attr({'id': 'cart__order-button'});
+        cartConfirmOrder.addClass('input-button');
+        $nR('#cart__order-button').addEventListener('click', () => {
+            new Form();
+        })
+        
         for (let i = 0; i < itemsInCart.length; i++) {
-            const cartItemRow = new Element('tr', cartItemList);        // $nR('#cart-itemList')
+            const cartItemRow = new Element('tr', cartItemList);         // $nR('#cart-itemList')
             cartItemRow.attr({'data-id': `${itemsInCart[i].id}`})
             cartItemRow.addClass('cart__item-li');
 
@@ -63,13 +91,23 @@ class Cart extends Element {
 
             const cartItemCellQuantity = new Element('td', cartItemRow);
             cartItemCellQuantity.addClass('cart__item-cell--quantity');
+
             const cartItemNumberSelector = new Element('input', cartItemCellQuantity);
-            cartItemNumberSelector.attr({'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': '1', 'min': '1'});
+            cartItemNumberSelector.attr({'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': '2', 'min': '1'});
             cartItemNumberSelector.addClass('cart__input-quantity');
 
             const cartItemCellPrice = new Element('td', cartItemRow);
             cartItemCellPrice.addClass('cart__item-cell--price');
-            cartItemCellPrice.html(`${itemsInCart[i].price} $`);
+            cartItemCellPrice.html(`${itemsInCart[i].price}$`);
+
+            itemsInCart[i].totalPrice = itemsInCart[i].price * $nR('.cart__input-quantity').value;
+
+            const cartItemCellTotalPrice = new Element('td', cartItemRow);
+            cartItemCellTotalPrice.addClass('cart__item-cell--total-price');
+            cartItemCellTotalPrice.attr({'data-id': `${itemsInCart[i].id}`});
+            cartItemCellTotalPrice.html(`${itemsInCart[i].totalPrice}$`);
+
+            totalOrderSum += itemsInCart[i].totalPrice;     ///////////////////////////////////////
 
             const cartItemCellButton = new Element('td', cartItemRow);
             cartItemCellButton.addClass('cart__item-cell--button');
@@ -77,51 +115,41 @@ class Cart extends Element {
             const cartItemRemoveButton = new Button('Remove', cartItemCellButton);
             cartItemRemoveButton.addClass('input-button--service');
             cartItemRemoveButton.attr({'data-id': `${itemsInCart[i].id}`});
-            // console.log(itemsInCart[i].id);
             
             cartItemRemoveButton.click(cartRemoveButtonHandler);
         }
 
-        // for (let i = 0; i < itemsInCart.length; i++) {                                       // ХУЛИ НЕ РАБОТАЕТ?
-        //     const cartItemListLi = new Element('li', $nR('#cart-itemList'));                 // ХУЛИ НЕ РАБОТАЕТ?
-        //     cartItemListLi.addClass('cart__item-li');                                        // ХУЛИ НЕ РАБОТАЕТ?
-        //     for (let key in itemsInCart[i]) {                                                // ХУЛИ НЕ РАБОТАЕТ?
-        //         const cartItemListSpan = new Element('span', cartItemListLi.getElement());   // ХУЛИ НЕ РАБОТАЕТ?
-        //         cartItemListSpan.html(`${key} : ${element[key]}`);                           // ХУЛИ НЕ РАБОТАЕТ?
-        //     }                                                                                // ХУЛИ НЕ РАБОТАЕТ?
-        // });                                                                                  // ХУЛИ НЕ РАБОТАЕТ?
+        const totalOrderRow = new Element('tr', cartContent);                               ///////////////////////////////////////
+        totalOrderRow.addClass('cart__item--total-order-sum');                              ///////////////////////////////////////
+        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          ///////////////////////////////////////
 
-        // itemsInCart.forEach(element => {                                                     // ХУЛИ НЕ РАБОТАЕТ?
-        //     const cartItemListLi = new Element('li', $nR('#cart-itemList'));                 // ХУЛИ НЕ РАБОТАЕТ?
-        //     cartItemListLi.addClass('cart__item-li');                                        // ХУЛИ НЕ РАБОТАЕТ?
-        //     itemsQuantity++;                                                                 // ХУЛИ НЕ РАБОТАЕТ?
-        //     console.log(element);                                                            // ХУЛИ НЕ РАБОТАЕТ?
-        //     for (let key in element) {                                                       // ХУЛИ НЕ РАБОТАЕТ?
-        //         const cartItemListSpan = new Element('span', $nR('li'));                     // ХУЛИ НЕ РАБОТАЕТ?
-        //         cartItemListSpan.html(`${key} : ${element[key]}`);                           // ХУЛИ НЕ РАБОТАЕТ?
-        //     }                                                                                // ХУЛИ НЕ РАБОТАЕТ?
-        // });                                                                                  // ХУЛИ НЕ РАБОТАЕТ?
+        let inputsCollection = document.querySelectorAll('.cart__input-quantity');
+        let itemTotalPriceCollection = document.querySelectorAll('.cart__item-cell--total-price');
+       
+        inputsCollection.forEach(item => {
+            item.addEventListener('input', event => {                                  
+                let target = event.target;
+                let totalSum;
+                let totalSumOrder = 0;
+
+                itemsInCart.forEach(item => {
+                    if (target.id === item.id) {
+                        totalSum = item.price * target.value;
+                        item.totalPrice = totalSum;
+                    }
+                    totalSumOrder += item.totalPrice;
+                })
+
+                totalOrderRow.html(`Total order price: ${totalSumOrder}`); 
+
+                itemTotalPriceCollection.forEach(cell => {
+                    if (target.id === cell.dataset.id) {
+                        cell.innerHTML = `${totalSum}$`;
+                    }
+                })
+            });
+        });
         
         new Modal('Cart', cartContent.getElement());
     }
 }
-
-// 1. Вытаскиваем инфу про товары в корзине
-// 2. Вытаскиваем из ЛокалСториджа базу данных
-// 3. Запускаем циклб который сравнивает id текущего товара с id товарами 
-// - первый цикл находит товар
-// - второрй подставляет
-// забираем имяб цена и кол-во из корзины => формируем обьект, с которого спиздим инфу и выводим на его основе инфу куда-то
-
-// формируем div, в котором будет выводиться инфа ^
-// в нем li 
-
-// const characteristics = new Element('ul', this.element);
-// for (let key in this.dataObj.characteristics) {
-//     new Element(
-//         'li', 
-//         characteristics.getElement()
-//     ).html(
-//         `${capitalize(key)} : ${this.dataObj.characteristics[key]}.`
-//     );
-// }

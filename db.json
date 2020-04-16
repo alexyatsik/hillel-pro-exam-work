@@ -11,7 +11,31 @@
                     "characteristics": {
                         "cpu": "Intel I-5",
                         "ram": "8Gb",
-                        "hd": "120G"
+                        "hd": "120Gb"
+                    }
+                },
+                {
+                    "id": "1223",
+                    "title": "ASUS Laptop Limited",
+                    "price": "4000",
+                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-7",
+                        "ram": "32Gb",
+                        "hd": "2TR"
+                    }
+                },
+                {
+                    "id": "12223",
+                    "title": "LENOVO Laptop Limited",
+                    "price": "800",
+                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
+                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-3",
+                        "ram": "8Gb",
+                        "hd": "500Gb"
                     }
                 }
             ],

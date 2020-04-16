@@ -60,6 +60,13 @@ class Product extends Component {
 
         new Quantifier('productQuantity', this.element);
         new Button('Add to cart', this.element).click(productAddToCartHandler);
+        const feedbacks = new Button('Feedbacks', this.element);
+        feedbacks.attr({
+            'data-id': this.dataObj.id,
+            'data-cat': this.category,
+            'data-title': this.getTitle()
+        });
+        feedbacks.click(callFeedbacksHandler);
 
         return this.element;
     }
