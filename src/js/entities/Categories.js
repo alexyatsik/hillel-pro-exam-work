@@ -23,7 +23,20 @@ class Categories extends Element {
 
     showProducts = (categories) => {
         $nR('.categories__list').addEventListener('click', (event) => {
+            document.getElementById('filter').innerHTML = '';
+            document.getElementById('filter').classList.remove('filter--hidden');
             let target = event.target;
+
+            let liCollection = document.querySelectorAll('.categories__item-li');
+            
+            for (let element of liCollection) {
+                element.classList.remove('clicked-category');
+                
+                if (!target.classList.contains('clicked-category')) {
+                    target.classList.add('clicked-category');
+                } 
+            }
+
             let currentCategoryProducts = [];
             let currentCategory = [];
 
@@ -31,11 +44,10 @@ class Categories extends Element {
                 if (target.getAttribute('name') === key) {
                     for (let item of categories[key]) {
                         currentCategoryProducts.push(new Product(item, categories[key])); //
-
+                        
                         let test = new Product(item, categories[key]);
                         for (let key in test) {
                             if (key === 'dataObj') {
-                                // console.log(test[key]);
                                 currentCategory.push(test[key]);
                             }
                         }
@@ -43,9 +55,7 @@ class Categories extends Element {
                     }
                 }
             }
-            // console.log(currentCategory);
             new Filter(currentCategory);
-            // console.log(currentCategoryProducts);
             new ProductsList(currentCategoryProducts).init();
         })
     }

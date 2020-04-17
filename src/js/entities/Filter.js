@@ -37,7 +37,7 @@ class Filter extends Component {
     drawFilters(filterObj) {
         const filterBox = new Component($nR('#filter'));
         filterBox.addClass('filter-category-wrap');
-
+        
         for (let filterName in filterObj) {
             const filterItemHead = new Element('h3', filterBox);
             filterItemHead.addClass('filter-item__head');
@@ -89,7 +89,6 @@ class Filter extends Component {
 
                 new ProductsList(finalyProductArray).init();
             })
-            console.log(currentCategory);
         });
     }
 

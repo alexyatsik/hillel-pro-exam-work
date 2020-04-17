@@ -31,7 +31,7 @@ function productAddToCartHandler() {
 
     const item = {
         id: this.parentElement.dataset.id,
-        title: this.parentElement.dataset.title,
+        name: this.parentElement.dataset.name,
         price: this.parentElement.dataset.price,
         quantity: userQuantity
     }
@@ -54,7 +54,3 @@ function cartRemoveButtonHandler() {
 function callFeedbacksHandler() {
     new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }
-
-// function cartCountPriceOnBlur()  {
-//     $nR('.cart__input-quantity').value
-// }

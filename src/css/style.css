@@ -33,6 +33,12 @@ body{
     font-weight: 900;
     font-size: 50px;
     margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header__logo:hover {
+    transform: scale(0.9);
 }
 
 .header__logo-motto {
@@ -77,6 +83,12 @@ body{
 
 .categories__item-li:hover {
     background: #00d9ffc2;
+}
+
+.clicked-category {
+    background-color: #00d9ffc2;
+    /* border-right: 10px solid #84e6ff; */
+    color: #ffffff;
 }
 
 form {
@@ -233,6 +245,10 @@ form {
     margin: 0;
 }
 
+.filter--hidden {
+    opacity: 0;
+}
+
 .filter-item__list{
     list-style: none;
     padding: 0;
@@ -257,6 +273,7 @@ form {
     color: #ffffff;
     border-right: 3px solid #84e6ff;
 }
+
 .clicked-filter{
     background-color: #979696;
     border-right: 10px solid #84e6ff;
