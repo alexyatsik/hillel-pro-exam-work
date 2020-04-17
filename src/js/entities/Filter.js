@@ -76,18 +76,20 @@ class Filter extends Component {
 
                 let finalyProductArray = [];
 
-                for(let elem of filtredProductsArray){  
+                for(let elem of filtredProductsArray){ 
+                    console.log(currentCategory) ;
                     finalyProductArray.push(new Product(elem, currentCategory)); 
                 }
 
                 if(filtredProductsArray.length === 0){
                     for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj,currentCategory)); 
+                        finalyProductArray.push(new Product(obj, currentCategory));  // place items of current category
                     }
                 }
 
                 new ProductsList(finalyProductArray).init();
             })
+            console.log(currentCategory);
         });
     }
 
