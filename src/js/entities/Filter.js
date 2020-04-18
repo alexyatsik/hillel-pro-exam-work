@@ -1,12 +1,13 @@
 'use strict';
 
 class Filter extends Component {
-    constructor(category) {
+    constructor(category, selectedCategory) {
         super();
         const filterObject = this.getFilterObject(category);
         this.drawFilters(filterObject);
         this.getProductsFromFilter(category);
         this.toggleClass();
+        this.selectedCategory = selectedCategory;
     }
 
     getFilterObject(currentCategory) {
@@ -77,13 +78,12 @@ class Filter extends Component {
                 let finalyProductArray = [];
 
                 for(let elem of filtredProductsArray){ 
-                    console.log(currentCategory) ;
-                    finalyProductArray.push(new Product(elem, currentCategory)); 
+                    finalyProductArray.push(new Product(elem, this.selectedCategory)); 
                 }
 
                 if(filtredProductsArray.length === 0){
                     for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj, currentCategory));  // place items of current category
+                        finalyProductArray.push(new Product(obj, this.selectedCategory));  // place items of current category
                     }
                 }
 

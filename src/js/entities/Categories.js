@@ -6,7 +6,7 @@ class Categories extends Element {
 
         this.showCategories(categories);
         this.showProducts(categories);
-
+        this.selectedCategory;
     }
 
     showCategories = (categories) => {
@@ -43,8 +43,10 @@ class Categories extends Element {
             for (let key in categories) {
                 if (target.getAttribute('name') === key) {
                     for (let item of categories[key]) {
-                        currentCategoryProducts.push(new Product(item, categories[key])); //
-                        
+                        currentCategoryProducts.push(new Product(item, key));
+                        this.selectedCategory = key;
+                        console.log(this.selectedCategory);
+
                         let test = new Product(item, categories[key]);
                         for (let key in test) {
                             if (key === 'dataObj') {
@@ -55,7 +57,7 @@ class Categories extends Element {
                     }
                 }
             }
-            new Filter(currentCategory);
+            new Filter(currentCategory, this.selectedCategory);
             new ProductsList(currentCategoryProducts).init();
         })
     }
