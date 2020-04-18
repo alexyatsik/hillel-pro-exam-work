@@ -37,7 +37,7 @@ class Filter extends Component {
     drawFilters(filterObj) {
         const filterBox = new Component($nR('#filter'));
         filterBox.addClass('filter-category-wrap');
-
+        
         for (let filterName in filterObj) {
             const filterItemHead = new Element('h3', filterBox);
             filterItemHead.addClass('filter-item__head');
@@ -76,13 +76,14 @@ class Filter extends Component {
 
                 let finalyProductArray = [];
 
-                for(let elem of filtredProductsArray){  
+                for(let elem of filtredProductsArray){ 
+                    console.log(currentCategory) ;
                     finalyProductArray.push(new Product(elem, currentCategory)); 
                 }
 
                 if(filtredProductsArray.length === 0){
                     for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj,currentCategory)); 
+                        finalyProductArray.push(new Product(obj, currentCategory));  // place items of current category
                     }
                 }
 

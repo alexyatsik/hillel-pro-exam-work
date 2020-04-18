@@ -8,6 +8,8 @@ class Product extends Component {
 
         this.element.dataset.id = this.dataObj.id;
         this.element.dataset.cat = this.category;
+        this.element.dataset.title = this.dataObj.title;
+        this.element.dataset.price = this.dataObj.price;
     }
 
     listView() {

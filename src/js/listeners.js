@@ -31,6 +31,8 @@ function productAddToCartHandler() {
 
     const item = {
         id: this.parentElement.dataset.id,
+        name: this.parentElement.dataset.name,
+        price: this.parentElement.dataset.price,
         quantity: userQuantity
     }
 
