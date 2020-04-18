@@ -54,3 +54,7 @@ function cartRemoveButtonHandler() {
 function callFeedbacksHandler() {
     new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }
+
+// function cartCountPriceOnBlur()  {
+//     $nR('.cart__input-quantity').value
+// }
