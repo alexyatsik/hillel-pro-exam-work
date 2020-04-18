@@ -4,6 +4,8 @@ class Cart extends Element {
     constructor(parent) {
         super('div', $nR('#cart'))
 
+        $nD('#cart-image-button');
+
         this.attr({'id': 'cart-wrap'});
         this.addClass('component', 'cart-wrap');
 
@@ -15,9 +17,7 @@ class Cart extends Element {
         const imageButton = $nR('#cart-image-button');
         imageButton.addEventListener('click',this.showCartInterface);
 
-        let itemsQuantity = 1;                                         // (FOR TESTING) items' quantity in the cart
-        this.createImageCounterBox(itemsQuantity);                     // takes the value of items' quantity in the cart
-
+        this.createImageCounterBox();                     // takes the value of items' quantity in the cart
     }
 
     createImageButton(attributes) {
@@ -26,15 +26,13 @@ class Cart extends Element {
         return button;
     }
 
-    createImageCounterBox(itemsQuantity) {
+    createImageCounterBox() {
+        const itemsQuantity = getLocalStorage('cart').length;
+        $nD('#cart-counter');
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');
         counterBox.attr({'id': 'cart-counter'});
         counterBox.html(itemsQuantity);                                 // takes the value of items' quantity in the cart
-        if ((itemsQuantity === 0) || (itemsQuantity === undefined)) {
-            counterBox.html('');
-            $nR('#cart-counter').classList.remove('cart__counter-box');
-        }
     }
 
     showCartInterface = () => {   
@@ -77,8 +75,10 @@ class Cart extends Element {
         cartConfirmOrder.attr({'id': 'cart__order-button'});
         cartConfirmOrder.addClass('input-button');
         $nR('#cart__order-button').addEventListener('click', () => {
-            new Form();
+            new Modal('Checkout', new Form().init());
         })
+
+        const itemsInCart = getLocalStorage('cart');
         
         for (let i = 0; i < itemsInCart.length; i++) {
             const cartItemRow = new Element('tr', cartItemList);         // $nR('#cart-itemList')
@@ -87,13 +87,13 @@ class Cart extends Element {
 
             const cartItemCellName = new Element('td', cartItemRow);
             cartItemCellName.addClass('cart__item-cell--name');
-            cartItemCellName.html(`${itemsInCart[i].name}`);
+            cartItemCellName.html(`${itemsInCart[i].title}`);
 
             const cartItemCellQuantity = new Element('td', cartItemRow);
             cartItemCellQuantity.addClass('cart__item-cell--quantity');
 
             const cartItemNumberSelector = new Element('input', cartItemCellQuantity);
-            cartItemNumberSelector.attr({'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': '2', 'min': '1'});
+            cartItemNumberSelector.attr({'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': `${itemsInCart[i].quantity}`, 'min': '1'});
             cartItemNumberSelector.addClass('cart__input-quantity');
 
             const cartItemCellPrice = new Element('td', cartItemRow);

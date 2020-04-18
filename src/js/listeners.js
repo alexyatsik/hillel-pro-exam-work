@@ -1,7 +1,7 @@
 'use strict';
 
 function windowHandler() {
-    const cart = new Cart();
+    new Cart();
     init();
 }
 
@@ -39,16 +39,20 @@ function productAddToCartHandler() {
     addItemToCartInLS('cart', item);
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
+    new Cart();
 }
 
 function cartRemoveButtonHandler() {
-    for (let i = 0; i < itemsInCart.length; i++) {
+    /*for (let i = 0; i < itemsInCart.length; i++) {
         if (this.dataset.id === itemsInCart[i].id) {
             itemsInCart.splice([i], 1);
             $nD(`tr[data-id="${this.dataset.id}"]`);
         }
     }
-    console.log(itemsInCart);
+    console.log(itemsInCart);*/
+
+    deleteItemFromLS('cart', this.dataset.id);
+    new Cart().showCartInterface();
 }
     
 function callFeedbacksHandler() {

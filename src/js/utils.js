@@ -38,6 +38,19 @@ function addItemToCartInLS(lsName, item) {
     addToLocalStorage(lsName, db);
 }
 
+function deleteItemFromLS(lsName, id) {
+    const db = getLocalStorage(lsName);
+
+    for (let i = 0; i < db.length; i++) {
+        if (db[i].id === id) {
+            db.splice(i, 1);
+            break;
+        }
+    }
+
+    addToLocalStorage(lsName, db);
+}
+
 function addItemToFeedbacksInLS(itemId, feedback) {
     const DB_NAME = 'feedbacks'
     const composedFeedback = { 
