@@ -1,6 +1,7 @@
 'use strict';
 
 function windowHandler() {
+    const cart = new Cart();
     init();
 }
 
@@ -30,6 +31,8 @@ function productAddToCartHandler() {
 
     const item = {
         id: this.parentElement.dataset.id,
+        name: this.parentElement.dataset.name,
+        price: this.parentElement.dataset.price,
         quantity: userQuantity
     }
 
@@ -38,6 +41,16 @@ function productAddToCartHandler() {
     document.body.classList.remove('body-modal-window');
 }
 
+function cartRemoveButtonHandler() {
+    for (let i = 0; i < itemsInCart.length; i++) {
+        if (this.dataset.id === itemsInCart[i].id) {
+            itemsInCart.splice([i], 1);
+            $nD(`tr[data-id="${this.dataset.id}"]`);
+        }
+    }
+    console.log(itemsInCart);
+}
+    
 function callFeedbacksHandler() {
     new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }

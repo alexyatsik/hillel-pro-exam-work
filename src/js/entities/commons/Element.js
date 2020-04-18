@@ -34,6 +34,10 @@ class Element {
         this.element.addEventListener('click', handler);
     }
 
+    listener(handler, eventType = 'click') {
+        this.element.addEventListener(eventType, handler);
+    }
+
     getElement() {
         return this.element;
     }
