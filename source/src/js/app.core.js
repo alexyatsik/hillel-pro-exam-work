@@ -1,6 +1,11 @@
 'use strict';
 
-function init() {
+import Product from './entities/Product';
+import ProductsList from './entities/ProductsList';
+import Categories from './entities/Categories';
+import { addToLocalStorage } from './utils';
+
+export default function init() {
     fetch('../../db.json')
         .then(res => {
             return res.json();

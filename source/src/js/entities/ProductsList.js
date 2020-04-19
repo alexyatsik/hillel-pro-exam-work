@@ -1,6 +1,8 @@
 'use strict';
 
-class ProductsList extends Component {
+import Component from './commons/Component';
+
+export default class ProductsList extends Component {
     constructor(products) {
         super();
         this.products = products || [];

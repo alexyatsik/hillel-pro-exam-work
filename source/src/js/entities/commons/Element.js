@@ -1,6 +1,6 @@
 'use strict';
 
-class Element {
+export default class Element {
     constructor(tag, parent = null) {
        this.element = document.createElement(tag);
 

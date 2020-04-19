@@ -1,6 +1,11 @@
 'use strict';
 
-class Product extends Component {
+import Component from './commons/Component';
+import Element from './commons/Element';
+import Button from './commons/Button';
+import Quantifier from './Quantifier';
+
+export default class Product extends Component {
     constructor(dataObj, category) {
         super();
         this.dataObj = dataObj;

@@ -1,6 +1,11 @@
 'use strict';
 
-class Cart extends Element {
+import Element from './commons/Element';
+import Button from './commons/Button';
+import Form from './Form';
+import Modal from './Modal';
+
+export default class Cart extends Element {
     constructor(parent) {
         super('div', $nR('#cart'))
 
@@ -35,14 +40,14 @@ class Cart extends Element {
         counterBox.html(itemsQuantity);                                 // takes the value of items' quantity in the cart
     }
 
-    showCartInterface = () => {   
+    showCartInterface() {   
         let totalOrderSum = 0;
 
         const cartContent = new Element('div', $nR('#cart-wrap'));       // $nR('.modal-window') => $nR('#cart-wrap') = WTF ?!
         cartContent.addClass('cart__content-box');
         cartContent.attr({'id': 'cart-contentBox'});
                     
-        const dataBase = getLocalStorage('internetStorageDb');
+        //const dataBase = getLocalStorage('internetStorageDb');
 
         const cartItemList = new Element('table', cartContent);
         cartItemList.attr({'id': 'cart-itemList'});

@@ -2,15 +2,25 @@
   "name": "examination-work",
   "version": "1.0.0",
   "description": "An Internet Store",
-  "main": "index.html",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "javascript",
+    "An internet store"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexyatsik/hillel-pro-exam-work.git"
   },
-  "author": "Alexeii Yatsenko, Vlad Potapov, Michael Neikovich, Maksym Suprunenko",
+  "author": "Alexeii Yatsenko, Vladislav Potapov, Michael Neikovich, Maksym Suprunenko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alexyatsik/hillel-pro-exam-work/issues"
@@ -18,7 +28,12 @@
   "homepage": "https://github.com/alexyatsik/hillel-pro-exam-work#readme",
   "dependencies": {
     "jquery": "^3.4.1",
-    "serve": "^11.3.0",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }

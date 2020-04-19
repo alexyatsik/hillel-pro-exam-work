@@ -1,5 +1,7 @@
 'use strict';
 
+import { windowHandler } from './listeners';
+
 window.addEventListener('DOMContentLoaded', windowHandler);
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('filter').classList.add('filter--hidden');
