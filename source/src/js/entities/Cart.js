@@ -5,8 +5,10 @@ import Button from './commons/Button';
 import Form from './Form';
 import Modal from './Modal';
 
+import { $nR, $nD, getLocalStorage } from '../utils';
+
 export default class Cart extends Element {
-    constructor(parent) {
+    constructor() {
         super('div', $nR('#cart'))
 
         $nD('#cart-image-button');
@@ -17,10 +19,10 @@ export default class Cart extends Element {
         this.createImageButton({
             'id': 'cart-image-button',
             'type': 'image',
-            'src': 'src/images/cart-icon.png'
+            'value': ''
         }); 
         const imageButton = $nR('#cart-image-button');
-        imageButton.addEventListener('click',this.showCartInterface);
+        imageButton.addEventListener('click', this.showCartInterface);
 
         this.createImageCounterBox();                     // takes the value of items' quantity in the cart
     }
@@ -32,7 +34,7 @@ export default class Cart extends Element {
     }
 
     createImageCounterBox() {
-        const itemsQuantity = getLocalStorage('cart').length;
+        const itemsQuantity = getLocalStorage('cart').length || 0;
         $nD('#cart-counter');
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');
@@ -47,8 +49,6 @@ export default class Cart extends Element {
         cartContent.addClass('cart__content-box');
         cartContent.attr({'id': 'cart-contentBox'});
                     
-        //const dataBase = getLocalStorage('internetStorageDb');
-
         const cartItemList = new Element('table', cartContent);
         cartItemList.attr({'id': 'cart-itemList'});
         cartItemList.addClass('cart__item-list');
@@ -72,10 +72,6 @@ export default class Cart extends Element {
         cartHeadProductTotalPrice .addClass('cart__cell--heading');
         cartHeadProductTotalPrice.html('Total Price');
 
-        // const totalOrderRow = new Element('tr', cartContent);
-        // totalOrderRow.addClass('cart__item--total-order-sum');
-        // totalOrderRow.html(`Total order price: ${totalOrderSum}`);
-
         const cartConfirmOrder = new Button('Checkout', cartContent);
         cartConfirmOrder.attr({'id': 'cart__order-button'});
         cartConfirmOrder.addClass('input-button');
@@ -86,7 +82,7 @@ export default class Cart extends Element {
         const itemsInCart = getLocalStorage('cart');
         
         for (let i = 0; i < itemsInCart.length; i++) {
-            const cartItemRow = new Element('tr', cartItemList);         // $nR('#cart-itemList')
+            const cartItemRow = new Element('tr', cartItemList);         
             cartItemRow.attr({'data-id': `${itemsInCart[i].id}`})
             cartItemRow.addClass('cart__item-li');
 

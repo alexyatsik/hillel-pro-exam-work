@@ -4,6 +4,9 @@ import Component from './commons/Component';
 import Element from './commons/Element';
 import Button from './commons/Button';
 
+import { $nD } from '../utils';
+import { modalWindowCloseHandler } from '../listeners';
+
 export default class Modal extends Component {
     constructor(title, content){
         super(document.body);

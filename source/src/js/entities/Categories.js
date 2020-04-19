@@ -5,6 +5,8 @@ import Product from './Product';
 import Filter from './Filter';
 import ProductsList from './ProductsList';
 
+import { $nR, capitalize } from '../utils';
+
 export default class Categories extends Element {
     constructor(categories) {
         super('nav', $nR('#category'))

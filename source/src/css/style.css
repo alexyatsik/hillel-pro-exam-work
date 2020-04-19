@@ -1,3 +1,8 @@
+@import "~normalize.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import 'fonts.css';
+
 /* GENERAL */
 * {
     box-sizing: border-box;
@@ -6,7 +11,7 @@
 
 body{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .content-frame {
@@ -219,6 +224,7 @@ form {
 /* CART */
 .cart-wrap {
     position: relative;
+    height: 100%;
 }
 
 .cart__counter-box {
@@ -247,6 +253,13 @@ form {
 
 .cart__input-quantity {
     width: 50px;
+}
+
+#cart-image-button {
+    background-image: url('../images/cart-icon.png');
+    background-size: cover;
+    height: 42px;
+    width: 54px;
 }
 
 /* FILTERS */
