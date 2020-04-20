@@ -1,13 +1,6 @@
 'use strict';
 
-import Element from './commons/Element';
-import Product from './Product';
-import Filter from './Filter';
-import ProductsList from './ProductsList';
-
-import { $nR, capitalize } from '../utils';
-
-export default class Categories extends Element {
+class Categories extends Element {
     constructor(categories) {
         super('nav', $nR('#category'))
 
@@ -16,7 +9,7 @@ export default class Categories extends Element {
         this.selectedCategory;
     }
 
-    showCategories(categories) {
+    showCategories = (categories) => {
         const list = new Element('ul', this.element)
         list.addClass('categories__list');
 
@@ -28,7 +21,7 @@ export default class Categories extends Element {
         }
     }
 
-    showProducts(categories) {
+    showProducts = (categories) => {
         $nR('.categories__list').addEventListener('click', (event) => {
             document.getElementById('filter').innerHTML = '';
             document.getElementById('filter').classList.remove('filter--hidden');
@@ -60,7 +53,6 @@ export default class Categories extends Element {
                                 currentCategory.push(test[key]);
                             }
                         }
-                        
                     }
                 }
             }

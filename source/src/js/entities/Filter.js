@@ -1,13 +1,6 @@
 'use strict';
 
-import Component from './commons/Component';
-import Element from './commons/Element';
-import Product from './Product';
-import ProductsList from './ProductsList';
-
-import { $nR, capitalize } from '../utils';
-
-export default class Filter extends Component {
+class Filter extends Component {
     constructor(category, selectedCategory) {
         super();
         const filterObject = this.getFilterObject(category);
@@ -90,7 +83,7 @@ export default class Filter extends Component {
 
                 if(filtredProductsArray.length === 0){
                     for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj, this.selectedCategory));  // place items of current category
+                        finalyProductArray.push(new Product(obj, this.selectedCategory));
                     }
                 }
 

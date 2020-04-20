@@ -1,8 +1,6 @@
 'use strict';
 
-import Element from './Element';
-
-export default class Input extends Element {
+class Input extends Element {
     constructor(name, parent) {
         super('input', parent);
 

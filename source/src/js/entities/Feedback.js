@@ -1,13 +1,6 @@
 'use strict';
 
-import Component from './commons/Component';
-import Element from './commons/Element';
-import Input from './commons/Input';
-import Button from './commons/Button';
-
-import { getLocalStorage, $nD, addItemToFeedbacksInLS } from '../utils';
-
-export default class Feedback extends Component {
+class Feedback extends Component {
     constructor(itemId, parent) {
         super(parent);
         this.itemId = itemId;
