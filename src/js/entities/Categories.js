@@ -53,7 +53,6 @@ class Categories extends Element {
                                 currentCategory.push(test[key]);
                             }
                         }
-                        
                     }
                 }
             }
