@@ -6,6 +6,7 @@ import Form from './Form';
 import Modal from './Modal';
 
 import { $nR, $nD, getLocalStorage } from '../utils';
+import { cartRemoveButtonHandler } from '../listeners';
 
 export default class Cart extends Element {
     constructor() {

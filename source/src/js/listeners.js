@@ -6,7 +6,7 @@ import Modal from './entities/Modal';
 import Feedback from './entities/Feedback';
 
 import init from './app.core';
-import { $nD, getLocalStorage, deleteItemFromLS } from './utils';
+import { $nD, getLocalStorage, deleteItemFromLS, addItemToCartInLS } from './utils';
 
 export function windowHandler() {
     new Cart();
