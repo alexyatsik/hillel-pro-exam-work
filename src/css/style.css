@@ -98,11 +98,11 @@ body{
     color: #ffffff;
 }
 
-form {
+/* form {
     display: flex;
     flex-direction: column;
     align-items: start;
-}
+} */
 
 .error::before {
     content: 'Incorrect input';
@@ -296,4 +296,31 @@ form {
 /* PRODUCTS LISTING */
 .products-wrap {
     display: flex;
+}
+
+/* FORM */
+.input{
+    min-width: 250px;
+    min-height: 25px;
+    margin-left: 10px;
+    padding: 5px;
+}
+.error-input{
+    border: 1px solid red;
+}
+
+.input-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.error-message{
+    color: red;
+    font-size: 11px;
+    margin: 0 0 0 110px;
+}
+.error-message-hidden{
+    visibility: hidden;
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 class Cart extends Element {
-    constructor(parent) {
+    constructor() {
         super('div', $nR('#cart'))
 
         $nD('#cart-image-button');
@@ -66,10 +66,6 @@ class Cart extends Element {
         const cartHeadProductTotalPrice = new Element('th', cartHeadRow);
         cartHeadProductTotalPrice .addClass('cart__cell--heading');
         cartHeadProductTotalPrice.html('Total Price');
-
-        // const totalOrderRow = new Element('tr', cartContent);
-        // totalOrderRow.addClass('cart__item--total-order-sum');
-        // totalOrderRow.html(`Total order price: ${totalOrderSum}`);
 
         const cartConfirmOrder = new Button('Checkout', cartContent);
         cartConfirmOrder.attr({'id': 'cart__order-button'});
