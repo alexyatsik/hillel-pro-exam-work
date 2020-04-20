@@ -15,7 +15,6 @@ export function windowHandler() {
 
 export function modalWindowCloseHandler() {
     $nD('.modal-window-wrapper');
-    document.body.classList.remove('body-modal-window');
 }
 
 export function productHandler() {

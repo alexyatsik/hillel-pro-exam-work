@@ -90,7 +90,7 @@ export default class Filter extends Component {
 
                 if(filtredProductsArray.length === 0){
                     for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj, this.selectedCategory));  // place items of current category
+                        finalyProductArray.push(new Product(obj, this.selectedCategory));
                     }
                 }
 

@@ -23,9 +23,9 @@ export default class Cart extends Element {
             'value': ''
         }); 
         const imageButton = $nR('#cart-image-button');
-        imageButton.addEventListener('click', this.showCartInterface);
+        imageButton.addEventListener('click',this.showCartInterface);
 
-        this.createImageCounterBox();                     // takes the value of items' quantity in the cart
+        this.createImageCounterBox();         
     }
 
     createImageButton(attributes) {
@@ -35,47 +35,40 @@ export default class Cart extends Element {
     }
 
     createImageCounterBox() {
-        const itemsQuantity = getLocalStorage('cart').length || 0;
+        const itemsQuantity = getLocalStorage('cart').length;
         $nD('#cart-counter');
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');
         counterBox.attr({'id': 'cart-counter'});
-        counterBox.html(itemsQuantity);                                 // takes the value of items' quantity in the cart
+        counterBox.html(itemsQuantity);                         
     }
 
-    showCartInterface() {   
+    createElementAttr(tagName,parent,className,attributes = null){
+        const element = new Element(tagName, parent);  
+        element.addClass(className);
+        element.attr(attributes);
+        return element;
+    }
+
+    showCartInterface = () => {   
         let totalOrderSum = 0;
 
-        const cartContent = new Element('div', $nR('#cart-wrap'));       // $nR('.modal-window') => $nR('#cart-wrap') = WTF ?!
-        cartContent.addClass('cart__content-box');
-        cartContent.attr({'id': 'cart-contentBox'});
-                    
-        const cartItemList = new Element('table', cartContent);
-        cartItemList.attr({'id': 'cart-itemList'});
-        cartItemList.addClass('cart__item-list');
-
-        const cartHeadRow = new Element('tr', cartItemList);
-        cartHeadRow.addClass('cart__cell--heading');
-
-        const cartHeadProductName = new Element('th', cartHeadRow);
-        cartHeadProductName.addClass('cart__cell--heading');
+        const cartContent = this.createElementAttr('div',$nR('#cart-wrap'),'cart__content-box',{'id': 'cart-contentBox'});
+        const dataBase = getLocalStorage('internetStorageDb');
+        const cartItemList = this.createElementAttr('table',cartContent,'cart__item-list',{'id': 'cart-itemList'});
+        const cartHeadRow = this.createElementAttr('tr',cartItemList,'cart__cell--heading');
+        const cartHeadProductName = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductName.html('Product Name');
-
-        const cartHeadProductQuantity = new Element('th', cartHeadRow);
-        cartHeadProductQuantity.addClass('cart__cell--heading');
+        const cartHeadProductQuantity = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductQuantity.html('Quantity');
-
-        const cartHeadProductPrice = new Element('th', cartHeadRow);
-        cartHeadProductPrice.addClass('cart__cell--heading');
+        const cartHeadProductPrice = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductPrice.html('Price');
-
-        const cartHeadProductTotalPrice = new Element('th', cartHeadRow);
-        cartHeadProductTotalPrice .addClass('cart__cell--heading');
+        const cartHeadProductTotalPrice = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductTotalPrice.html('Total Price');
 
         const cartConfirmOrder = new Button('Checkout', cartContent);
-        cartConfirmOrder.attr({'id': 'cart__order-button'});
         cartConfirmOrder.addClass('input-button');
+        cartConfirmOrder.attr({'id': 'cart__order-button'});
         $nR('#cart__order-button').addEventListener('click', () => {
             new Modal('Checkout', new Form().init());
         })
@@ -83,47 +76,26 @@ export default class Cart extends Element {
         const itemsInCart = getLocalStorage('cart');
         
         for (let i = 0; i < itemsInCart.length; i++) {
-            const cartItemRow = new Element('tr', cartItemList);         
-            cartItemRow.attr({'data-id': `${itemsInCart[i].id}`})
-            cartItemRow.addClass('cart__item-li');
-
-            const cartItemCellName = new Element('td', cartItemRow);
-            cartItemCellName.addClass('cart__item-cell--name');
+            const cartItemRow = this.createElementAttr('tr', cartItemList,'cart__item-li',{'data-id': `${itemsInCart[i].id}`});
+            const cartItemCellName = this.createElementAttr('td', cartItemRow,'cart__item-cell--name');
             cartItemCellName.html(`${itemsInCart[i].title}`);
-
-            const cartItemCellQuantity = new Element('td', cartItemRow);
-            cartItemCellQuantity.addClass('cart__item-cell--quantity');
-
-            const cartItemNumberSelector = new Element('input', cartItemCellQuantity);
-            cartItemNumberSelector.attr({'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': `${itemsInCart[i].quantity}`, 'min': '1'});
-            cartItemNumberSelector.addClass('cart__input-quantity');
-
-            const cartItemCellPrice = new Element('td', cartItemRow);
-            cartItemCellPrice.addClass('cart__item-cell--price');
+            const cartItemCellQuantity = this.createElementAttr('td', cartItemRow,'cart__item-cell--quantity');
+            const cartItemNumberSelector = this.createElementAttr('input', cartItemCellQuantity,'cart__input-quantity',{'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': `${itemsInCart[i].quantity}`, 'min': '1'});
+            const cartItemCellPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--price');
             cartItemCellPrice.html(`${itemsInCart[i].price}$`);
-
             itemsInCart[i].totalPrice = itemsInCart[i].price * $nR('.cart__input-quantity').value;
-
-            const cartItemCellTotalPrice = new Element('td', cartItemRow);
-            cartItemCellTotalPrice.addClass('cart__item-cell--total-price');
-            cartItemCellTotalPrice.attr({'data-id': `${itemsInCart[i].id}`});
+            const cartItemCellTotalPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--total-price',{'data-id': `${itemsInCart[i].id}`});
             cartItemCellTotalPrice.html(`${itemsInCart[i].totalPrice}$`);
-
-            totalOrderSum += itemsInCart[i].totalPrice;     ///////////////////////////////////////
-
-            const cartItemCellButton = new Element('td', cartItemRow);
-            cartItemCellButton.addClass('cart__item-cell--button');
-
+            totalOrderSum += itemsInCart[i].totalPrice;     
+            const cartItemCellButton = this.createElementAttr('td', cartItemRow,'cart__item-cell--button');
             const cartItemRemoveButton = new Button('Remove', cartItemCellButton);
             cartItemRemoveButton.addClass('input-button--service');
             cartItemRemoveButton.attr({'data-id': `${itemsInCart[i].id}`});
-            
             cartItemRemoveButton.click(cartRemoveButtonHandler);
         }
 
-        const totalOrderRow = new Element('tr', cartContent);                               ///////////////////////////////////////
-        totalOrderRow.addClass('cart__item--total-order-sum');                              ///////////////////////////////////////
-        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          ///////////////////////////////////////
+        const totalOrderRow = this.createElementAttr('tr', cartContent,'cart__item--total-order-sum');
+        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          
 
         let inputsCollection = document.querySelectorAll('.cart__input-quantity');
         let itemTotalPriceCollection = document.querySelectorAll('.cart__item-cell--total-price');

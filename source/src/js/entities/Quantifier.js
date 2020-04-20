@@ -13,7 +13,8 @@ export default class Quantifier extends Component {
         });
         new Input(name, form)
         .attr({
-            'placeholder': 'Quantity'
+            'placeholder': 'Quantity',
+            'value': '1',
         });
     }
 }
