@@ -5,11 +5,12 @@ class Quantifier extends Component {
         super(parent); 
         const form = new Element('form', this);
         form.attr({
-            'id': `${name}Form`
+            'id': `${name}Form`,
         });
         new Input(name, form)
         .attr({
-            'placeholder': 'Quantity'
+            'placeholder': 'Quantity',
+            'value': '1',
         });
     }
 }
