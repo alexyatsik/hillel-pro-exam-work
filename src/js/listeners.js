@@ -7,7 +7,6 @@ function windowHandler() {
 
 function modalWindowCloseHandler() {
     $nD('.modal-window-wrapper');
-    document.body.classList.remove('body-modal-window');
 }
 
 function productHandler() {
@@ -43,14 +42,6 @@ function productAddToCartHandler() {
 }
 
 function cartRemoveButtonHandler() {
-    /*for (let i = 0; i < itemsInCart.length; i++) {
-        if (this.dataset.id === itemsInCart[i].id) {
-            itemsInCart.splice([i], 1);
-            $nD(`tr[data-id="${this.dataset.id}"]`);
-        }
-    }
-    console.log(itemsInCart);*/
-
     deleteItemFromLS('cart', this.dataset.id);
     new Cart().showCartInterface();
 }
@@ -58,7 +49,3 @@ function cartRemoveButtonHandler() {
 function callFeedbacksHandler() {
     new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }
-
-// function cartCountPriceOnBlur()  {
-//     $nR('.cart__input-quantity').value
-// }

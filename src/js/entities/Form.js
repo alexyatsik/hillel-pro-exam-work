@@ -100,12 +100,6 @@ class Form extends Element {
 
         if(isValidated){
             new Modal('Order completed', new DeliveryConfirmed(elements.firstName.value,elements.lastName.value).getElement());
-
-
-            // let finalText = new Element('p', );
-            // finalText.innerHTML(`Dear ${elements.firstName.value} ${elements.lastName.value}, your order is processing, our support manager will contact you as soon as possiple.`);
-            
-            // new Modal('Order completed', finalText);
         }
     }
 

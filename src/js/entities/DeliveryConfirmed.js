@@ -14,7 +14,6 @@ class DeliveryConfirmed extends Element {
 
     }
 
-
     init() {
         return this.element;
     }

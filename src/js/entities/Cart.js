@@ -17,7 +17,7 @@ class Cart extends Element {
         const imageButton = $nR('#cart-image-button');
         imageButton.addEventListener('click',this.showCartInterface);
 
-        this.createImageCounterBox();                     // takes the value of items' quantity in the cart
+        this.createImageCounterBox();         
     }
 
     createImageButton(attributes) {
@@ -32,13 +32,13 @@ class Cart extends Element {
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');
         counterBox.attr({'id': 'cart-counter'});
-        counterBox.html(itemsQuantity);                                 // takes the value of items' quantity in the cart
+        counterBox.html(itemsQuantity);                         
     }
 
     showCartInterface = () => {   
         let totalOrderSum = 0;
 
-        const cartContent = new Element('div', $nR('#cart-wrap'));       // $nR('.modal-window') => $nR('#cart-wrap') = WTF ?!
+        const cartContent = new Element('div', $nR('#cart-wrap'));  
         cartContent.addClass('cart__content-box');
         cartContent.attr({'id': 'cart-contentBox'});
                     
@@ -77,7 +77,7 @@ class Cart extends Element {
         const itemsInCart = getLocalStorage('cart');
         
         for (let i = 0; i < itemsInCart.length; i++) {
-            const cartItemRow = new Element('tr', cartItemList);         // $nR('#cart-itemList')
+            const cartItemRow = new Element('tr', cartItemList);       
             cartItemRow.attr({'data-id': `${itemsInCart[i].id}`})
             cartItemRow.addClass('cart__item-li');
 
@@ -103,7 +103,7 @@ class Cart extends Element {
             cartItemCellTotalPrice.attr({'data-id': `${itemsInCart[i].id}`});
             cartItemCellTotalPrice.html(`${itemsInCart[i].totalPrice}$`);
 
-            totalOrderSum += itemsInCart[i].totalPrice;     ///////////////////////////////////////
+            totalOrderSum += itemsInCart[i].totalPrice;     
 
             const cartItemCellButton = new Element('td', cartItemRow);
             cartItemCellButton.addClass('cart__item-cell--button');
@@ -115,9 +115,9 @@ class Cart extends Element {
             cartItemRemoveButton.click(cartRemoveButtonHandler);
         }
 
-        const totalOrderRow = new Element('tr', cartContent);                               ///////////////////////////////////////
-        totalOrderRow.addClass('cart__item--total-order-sum');                              ///////////////////////////////////////
-        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          ///////////////////////////////////////
+        const totalOrderRow = new Element('tr', cartContent);                               
+        totalOrderRow.addClass('cart__item--total-order-sum');                              
+        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          
 
         let inputsCollection = document.querySelectorAll('.cart__input-quantity');
         let itemTotalPriceCollection = document.querySelectorAll('.cart__item-cell--total-price');
