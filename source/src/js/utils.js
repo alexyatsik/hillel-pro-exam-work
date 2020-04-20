@@ -77,6 +77,18 @@ export function addItemToFeedbacksInLS(itemId, feedback) {
     addToLocalStorage(DB_NAME, db);
 }
 
+/*export function db(action, item) {
+    //const fs = require('fs');
+
+    switch (action) {
+        case 'get':
+            return fs.readFile('../fb.json');
+        case 'post':
+            fs.appendFile('../fb.json', item);
+            break;
+    }
+}*/
+
 export function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
 }

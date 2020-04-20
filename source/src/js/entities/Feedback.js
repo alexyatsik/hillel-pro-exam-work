@@ -79,7 +79,7 @@ export default class Feedback extends Component {
         }
 
         addItemToFeedbacksInLS(this.dataset.id, feedback);
-
+        
         $nD('.modal-window-wrapper');
         document.body.classList.remove('body-modal-window');
 

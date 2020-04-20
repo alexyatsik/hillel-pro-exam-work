@@ -30,6 +30,9 @@ const optimization = () => {
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 module.exports = {
+    node: {
+        fs: 'empty'
+    },
     context: path.resolve(__dirname, 'source'),
     mode: 'development',
     entry: ['@babel/polyfill', './src/js/app.js'],

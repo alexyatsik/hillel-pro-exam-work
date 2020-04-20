@@ -10,3 +10,4 @@ window.addEventListener('DOMContentLoaded', () => {
 document.querySelector('.header__logo').addEventListener('click', () => {
     location.reload(true);
 })
+
