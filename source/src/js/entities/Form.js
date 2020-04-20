@@ -1,6 +1,8 @@
 'use strict';
 
-class Form extends Component {
+import Component from './commons/Component';
+
+export default class Form extends Component {
     constructor() {
         super();
     }

@@ -1,16 +1,24 @@
 'use strict';
 
-function windowHandler() {
+import Cart from './entities/Cart';
+import Product from './entities/Product';
+import Modal from './entities/Modal';
+import Feedback from './entities/Feedback';
+
+import init from './app.core';
+import { $nD, getLocalStorage, deleteItemFromLS, addItemToCartInLS } from './utils';
+
+export function windowHandler() {
     new Cart();
     init();
 }
 
-function modalWindowCloseHandler() {
+export function modalWindowCloseHandler() {
     $nD('.modal-window-wrapper');
     document.body.classList.remove('body-modal-window');
 }
 
-function productHandler() {
+export function productHandler() {
     const db = getLocalStorage('internetStorageDb');
     for (let element of db[this.dataset.cat]) {
         if (element.id === this.dataset.id) {
@@ -20,7 +28,7 @@ function productHandler() {
     }
 }
 
-function productAddToCartHandler() {
+export function productAddToCartHandler() {
     const form = document.forms.productQuantityForm;
     const userQuantity = document.forms.productQuantityForm.productQuantity.value;
     form.classList.remove('error');
@@ -42,23 +50,11 @@ function productAddToCartHandler() {
     new Cart();
 }
 
-function cartRemoveButtonHandler() {
-    /*for (let i = 0; i < itemsInCart.length; i++) {
-        if (this.dataset.id === itemsInCart[i].id) {
-            itemsInCart.splice([i], 1);
-            $nD(`tr[data-id="${this.dataset.id}"]`);
-        }
-    }
-    console.log(itemsInCart);*/
-
+export function cartRemoveButtonHandler() {
     deleteItemFromLS('cart', this.dataset.id);
     new Cart().showCartInterface();
 }
     
-function callFeedbacksHandler() {
+export function callFeedbacksHandler() {
     new Modal(`Feedbacks of ${this.dataset.title}`, new Feedback(this.dataset.id).getElement());
 }
-
-// function cartCountPriceOnBlur()  {
-//     $nR('.cart__input-quantity').value
-// }

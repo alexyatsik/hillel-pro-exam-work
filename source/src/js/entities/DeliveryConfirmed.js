@@ -1,6 +1,8 @@
 'use strict';
 
-class DeliveryConfirmed extends Component {
+import Component from './commons/Component';
+
+export default class DeliveryConfirmed extends Component {
     constructor(data) {
         super();
     }

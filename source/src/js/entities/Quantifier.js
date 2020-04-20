@@ -1,6 +1,10 @@
 'use strict';
 
-class Quantifier extends Component {
+import Component from './commons/Component';
+import Element from './commons/Element';
+import Input from './commons/Input';
+
+export default class Quantifier extends Component {
     constructor(name, parent) {
         super(parent); 
         const form = new Element('form', this);

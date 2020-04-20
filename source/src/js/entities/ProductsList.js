@@ -1,6 +1,17 @@
 'use strict';
 
-class ProductsList extends Component {
+import Component from './commons/Component';
+//import * as $ from 'jQuery';
+//import '../../../../node_modules/slick-carousel/slick/slick'
+//import 'slick-carousel/slick/slick';
+
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import 'slick-carousel'
+
+import { $nD, $nR } from '../utils';
+
+export default class ProductsList extends Component {
     constructor(products) {
         super();
         this.products = products || [];

@@ -1,27 +1,27 @@
 'use strict';
 
-function $nR(selector) {
+export function $nR(selector) {
     const elem = document.querySelector(selector);
 
     return elem || false;
 }
 
-function $nD(selector) {
+export function $nD(selector) {
     const elem = $nR(selector);
     if (elem) {
         elem.remove();
     }
 }
 
-function getLocalStorage(lsName) {
+export function getLocalStorage(lsName) {
     return JSON.parse(localStorage.getItem(lsName)) || false;
 }
 
-function addToLocalStorage(lsName, item) {
+export function addToLocalStorage(lsName, item) {
     localStorage.setItem(lsName, JSON.stringify(item));
 }
 
-function addItemToCartInLS(lsName, item) {
+export function addItemToCartInLS(lsName, item) {
     let db = getLocalStorage(lsName);
     if (!db) {
         db = [item];
@@ -38,7 +38,7 @@ function addItemToCartInLS(lsName, item) {
     addToLocalStorage(lsName, db);
 }
 
-function deleteItemFromLS(lsName, id) {
+export function deleteItemFromLS(lsName, id) {
     const db = getLocalStorage(lsName);
 
     for (let i = 0; i < db.length; i++) {
@@ -51,7 +51,7 @@ function deleteItemFromLS(lsName, id) {
     addToLocalStorage(lsName, db);
 }
 
-function addItemToFeedbacksInLS(itemId, feedback) {
+export function addItemToFeedbacksInLS(itemId, feedback) {
     const DB_NAME = 'feedbacks'
     const composedFeedback = { 
         id: itemId,
@@ -77,6 +77,6 @@ function addItemToFeedbacksInLS(itemId, feedback) {
     addToLocalStorage(DB_NAME, db);
 }
 
-function capitalize(string) {
+export function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
 }

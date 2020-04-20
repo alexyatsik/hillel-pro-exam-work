@@ -1,6 +1,13 @@
 'use strict';
 
-class Filter extends Component {
+import Component from './commons/Component';
+import Element from './commons/Element';
+import Product from './Product';
+import ProductsList from './ProductsList';
+
+import { $nR, capitalize } from '../utils';
+
+export default class Filter extends Component {
     constructor(category, selectedCategory) {
         super();
         const filterObject = this.getFilterObject(category);

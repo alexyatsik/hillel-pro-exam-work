@@ -1,6 +1,8 @@
 'use strict';
 
-class Button extends Element {
+import Element from './Element';
+
+export default class Button extends Element {
     constructor(value, parent) {
         super('input', parent);
 

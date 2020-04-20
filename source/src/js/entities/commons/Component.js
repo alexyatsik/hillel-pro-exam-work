@@ -1,6 +1,8 @@
 'use strict';
 
-class Component extends Element {
+import Element from './Element';
+
+export default class Component extends Element {
     constructor(parent) {
         super('div', parent);
 
