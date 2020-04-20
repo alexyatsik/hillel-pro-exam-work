@@ -32,7 +32,7 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 module.exports = {
     context: path.resolve(__dirname, 'source'),
     mode: 'development',
-    entry: './src/js/app.js',
+    entry: ['@babel/polyfill', './src/js/app.js'],
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'build')
@@ -103,6 +103,21 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env'
+                        ],
+                        plugins: [
+                            '@babel/plugin-proposal-class-properties'
+                        ]
+                    }
+                }
             }
         ]
     }
