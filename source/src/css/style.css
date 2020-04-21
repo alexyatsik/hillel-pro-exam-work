@@ -63,16 +63,19 @@ body{
 }
 
 /* CATEGORIES */
-.category {
+.category,
+.categories {
     background-color: #979696;
 
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
 }
 
 .categories__list {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #979696;
 }

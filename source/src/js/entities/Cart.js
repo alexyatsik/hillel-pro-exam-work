@@ -35,7 +35,7 @@ export default class Cart extends Element {
     }
 
     createImageCounterBox() {
-        const itemsQuantity = getLocalStorage('cart').length;
+        const itemsQuantity = getLocalStorage('cart').length || 0;
         $nD('#cart-counter');
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');
@@ -83,7 +83,7 @@ export default class Cart extends Element {
             const cartItemNumberSelector = this.createElementAttr('input', cartItemCellQuantity,'cart__input-quantity',{'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': `${itemsInCart[i].quantity}`, 'min': '1'});
             const cartItemCellPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--price');
             cartItemCellPrice.html(`${itemsInCart[i].price}$`);
-            itemsInCart[i].totalPrice = itemsInCart[i].price * $nR('.cart__input-quantity').value;
+            itemsInCart[i].totalPrice = itemsInCart[i].price * itemsInCart[i].quantity;
             const cartItemCellTotalPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--total-price',{'data-id': `${itemsInCart[i].id}`});
             cartItemCellTotalPrice.html(`${itemsInCart[i].totalPrice}$`);
             totalOrderSum += itemsInCart[i].totalPrice;     
