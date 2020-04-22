@@ -57,7 +57,7 @@ export default class Cart extends Element {
         const cartContent = this.createElementAttr('div',$nR('#cart-wrap'),'cart__content-box',{'id': 'cart-contentBox'});
         const dataBase = getLocalStorage('internetStorageDb');
         const cartItemList = this.createElementAttr('table',cartContent,'cart__item-list',{'id': 'cart-itemList'});
-        const cartHeadRow = this.createElementAttr('tr',cartItemList,'cart__cell--heading');
+        const cartHeadRow = this.createElementAttr('tr',cartItemList,'cart__cell--heading-row');
         const cartHeadProductName = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductName.html('Product Name');
         const cartHeadProductQuantity = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
@@ -97,8 +97,8 @@ export default class Cart extends Element {
             cartItemRemoveButton.click(cartRemoveButtonHandler);
         }
 
-        const totalOrderRow = this.createElementAttr('tr', cartContent,'cart__item--total-order-sum');
-        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          
+        const totalOrderRow = this.createElementAttr('p', cartContent,'cart__item--total-order-sum');
+        totalOrderRow.html(`Total order price: ${totalOrderSum}$`);                          
 
         const cartConfirmOrder = new Button('Checkout', cartContent);
         cartConfirmOrder.addClass('input-button');

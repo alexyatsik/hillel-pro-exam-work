@@ -315,17 +315,28 @@ body{
     padding: 0;
     background: #b4b4b4;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
-
 .cart__cell--heading {
     background-color: #b4b4b4;
     text-align: left;
+    width: 100px;
+    padding: 5px;
 }
-
+.cart__item--total-order-sum{
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.input-button--service{
+    width: 100px;
+}
 .cart__input-quantity {
     width: 50px;
 }
-
+.cart__item-cell--name{
+    width: 250px;
+    padding: 5px 0;
+}
 #cart-image-button {
     background-image: url('../images/cart-icon.png');
     background-size: contain;
