@@ -15,6 +15,7 @@ export default class Quantifier extends Component {
         .attr({
             'placeholder': 'Quantity',
             'value': '1',
+            'class': 'product-quantityForm'
         });
     }
 }
