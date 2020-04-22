@@ -26,7 +26,9 @@ export default class Form extends Element {
         this.createFormElement('postal-code', 'Postal code*: ', 'input-postal', 'postalCode', 'Enter your postal code');
         this.createFormElement('street', 'Street*: ', 'input-street', 'street', 'Enter your street');
         this.createFormElement('house', 'House Nr.*: ', 'input-house', 'house', 'Enter your house number');
-        const confirmBtn = new Button('Confirm', $nR('.confirm-form'));
+        const confirmBtnWrap = new Component($nR('.confirm-form'));
+        confirmBtnWrap.addClass('confirm-btn-wrap');
+        const confirmBtn = new Button('Confirm', confirmBtnWrap);
         confirmBtn.addClass('input-button');
         confirmBtn.attr({'id' : 'confirm-button'});
         confirmBtn.click(this.validation)

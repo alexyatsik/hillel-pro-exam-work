@@ -115,6 +115,7 @@ body{
     align-items: flex-start;
 }
 
+/* FEEDBACK */
 .feedback-wrapper {
     display: flex;
 }
@@ -124,6 +125,24 @@ body{
     font-style: italic;
 }
 
+#feedbackForm{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.feedback-tip, .feedback-input, .feedback-textarea{
+    margin-bottom: 10px;
+}
+.feedback-button.input-button{
+    margin-bottom: 20px;
+    width: 300px;
+}
+.input-button.prev-button, .input-button.next-button{
+    width: 20px;
+    margin: 0 10px;
+}
+
+/* MODAL */
 .modal-window-wrapper{
     position: fixed;
     top: 0;
@@ -144,21 +163,36 @@ body{
     flex-direction: column;
 }
 
-.close-btn{
+.input-button{
     cursor: pointer;
     color: #000;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 400;
     padding: 0;
     transition: 0.3s;
-    background-color: #7c0202bb;
     border: none;
     border-radius: 5px;
-    margin-top: 10px;
+    width: 200px;
 }
-
-.close-btn:hover {
-    opacity: 0.9;
+.input-button:hover {
+    opacity: 0.8;
+}
+.close-btn{
+    background-color: #7c0202bb;
+    margin: 40px auto 0;
+}
+.add-button{
+    background-color: #11882f;
+    margin-top: 20px;
+}
+#confirm-button{
+    margin: 0 auto;
+    text-align: center;
+    background-color: #11882f;
+}
+.confirm-btn-wrap{
+    text-align: center;
+    margin-top: 40px;
 }
 
 /* PRODUCTS LISTING */
@@ -224,6 +258,7 @@ body{
 
 .card-image{
     width: 200px;
+    margin-right: 50px;
 }
 
 .modal-window__title{
@@ -232,6 +267,31 @@ body{
 
 .modal-window__content{
     display: flex;
+    justify-content: center;
+}
+
+.product-quantityForm{
+    width: 60px;
+}
+
+.modal-window__content{
+    min-width: 600px;
+}
+
+.card-content-wrap{
+    display: flex;
+    margin-bottom: 20px;
+}
+.card-characteristics{
+    padding: 0 17px;
+}
+.card-description-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-price{
+    font-weight: 700;
 }
 
 /* CART */

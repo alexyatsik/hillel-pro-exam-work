@@ -67,12 +67,6 @@ export default class Cart extends Element {
         const cartHeadProductTotalPrice = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductTotalPrice.html('Total Price');
 
-        const cartConfirmOrder = new Button('Checkout', cartContent);
-        cartConfirmOrder.addClass('input-button');
-        cartConfirmOrder.attr({'id': 'cart__order-button'});
-        $nR('#cart__order-button').addEventListener('click', () => {
-            new Modal('Checkout', new Form().init());
-        })
 
         const itemsInCart = getLocalStorage('cart');
         
@@ -105,6 +99,13 @@ export default class Cart extends Element {
 
         const totalOrderRow = this.createElementAttr('tr', cartContent,'cart__item--total-order-sum');
         totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          
+
+        const cartConfirmOrder = new Button('Checkout', cartContent);
+        cartConfirmOrder.addClass('input-button');
+        cartConfirmOrder.attr({'id': 'cart__order-button'});
+        $nR('#cart__order-button').addEventListener('click', () => {
+            new Modal('Checkout', new Form().init());
+        });
 
         let inputsCollection = document.querySelectorAll('.cart__input-quantity');
         let itemTotalPriceCollection = document.querySelectorAll('.cart__item-cell--total-price');
