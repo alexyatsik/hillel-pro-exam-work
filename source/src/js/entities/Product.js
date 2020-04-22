@@ -46,16 +46,30 @@ export default class Product extends Component {
     }
 
     expandedView() {
-        const img = new Element('img', this.element);
+
+        const cardContentWrap = new Element('div', this.element);
+        cardContentWrap.addClass('card-content-wrap');
+
+        const img = new Element('img', cardContentWrap);
         img.attr({
             'src': this.dataObj.imgPath,
-            'alt': `${this.title} image`
+            'alt': `${this.title} image`,
+            'class': 'card-image',
         });
 
-        const title = new Element('span', this.element);
-        title.html(`${this.dataObj.title}`);
+        // const title = new Element('span', this.element);
+        // title.html(`${this.dataObj.title}`);
 
-        const characteristics = new Element('ul', this.element);
+
+
+        const cardDescriptionWrap = new Element('div', cardContentWrap);
+        cardDescriptionWrap.addClass('card-description-wrap');
+
+
+
+        const characteristics = new Element('ul', cardDescriptionWrap);
+        characteristics.addClass('card-characteristics');
+
         for (let key in this.dataObj.characteristics) {
             new Element(
                 'li', 
@@ -65,19 +79,25 @@ export default class Product extends Component {
             );
         }
 
-        const price = new Element('span', this.element);
-        price.html(`$${this.dataObj.price}`);
+        const price = new Element('span', cardDescriptionWrap);
+        price.html(`Price: ${this.dataObj.price}$`);
+        price.addClass('card-price');
 
-        new Quantifier('productQuantity', this.element);
-        new Button('Add to cart', this.element).click(productAddToCartHandler);
-        const feedbacks = new Button('Feedbacks', this.element);
+        const quatifier = new Element('p', cardDescriptionWrap);
+        quatifier.html('Quantity: ');
+        new Quantifier('productQuantity', quatifier);
+
+        const feedbacks = new Button('Feedbacks', cardDescriptionWrap);
         feedbacks.attr({
             'data-id': this.dataObj.id,
             'data-cat': this.category,
             'data-title': this.getTitle()
         });
         feedbacks.click(callFeedbacksHandler);
-
+        
+        const addButton = new Button('Add to cart', this.element);
+        addButton.addClass('add-button');
+        addButton.click(productAddToCartHandler);
         return this.element;
     }
 

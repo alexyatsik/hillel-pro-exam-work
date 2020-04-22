@@ -11,6 +11,7 @@ export default class Categories extends Component {
         super($nR('#category'));
         this.addClass('categories');
         this.availableCategories = this.getAvailableCategories();
+        this.currentClickedCategory;
 
         this.createCategoryList();
     }
@@ -28,6 +29,7 @@ export default class Categories extends Component {
         const categoryList = new Element('ul', this.element);
         categoryList.addClass('categories__list');
         categoryList.click(() => {
+            this.switchClikedCategory(event.target);
             new Filter(event.target.textContent.toLowerCase());
         });
 
@@ -36,5 +38,13 @@ export default class Categories extends Component {
             li.addClass('categories__item-li');
             li.html(capitalize(elem));
         }
+    }
+
+    switchClikedCategory(target) {
+        if (this.currentClickedCategory) {
+            this.currentClickedCategory.classList.remove('clicked-category');
+        }
+        this.currentClickedCategory = target;
+        this.currentClickedCategory.classList.add('clicked-category');
     }
 }

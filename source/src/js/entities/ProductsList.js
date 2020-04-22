@@ -38,7 +38,7 @@ export default class ProductsList extends Component {
 
     slider() {
         const styles = window.getComputedStyle($nR('.product'));
-        const itemWidth = parseInt(styles.width) + parseInt(styles.margin) * 2;
+        const itemWidth = parseInt(styles.width) + parseInt(styles.margin);
         const slidesPerRow = parseInt($nR('#products').offsetWidth / itemWidth);
         
         $('#product-list').slick({

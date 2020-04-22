@@ -20,7 +20,8 @@ export default class Cart extends Element {
         this.createImageButton({
             'id': 'cart-image-button',
             'type': 'image',
-            'value': ''
+            'value': '',
+            'src' : '../images/cart-icon.png',
         }); 
         const imageButton = $nR('#cart-image-button');
         imageButton.addEventListener('click',this.showCartInterface);
@@ -56,7 +57,7 @@ export default class Cart extends Element {
         const cartContent = this.createElementAttr('div',$nR('#cart-wrap'),'cart__content-box',{'id': 'cart-contentBox'});
         const dataBase = getLocalStorage('internetStorageDb');
         const cartItemList = this.createElementAttr('table',cartContent,'cart__item-list',{'id': 'cart-itemList'});
-        const cartHeadRow = this.createElementAttr('tr',cartItemList,'cart__cell--heading');
+        const cartHeadRow = this.createElementAttr('tr',cartItemList,'cart__cell--heading-row');
         const cartHeadProductName = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductName.html('Product Name');
         const cartHeadProductQuantity = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
@@ -66,27 +67,29 @@ export default class Cart extends Element {
         const cartHeadProductTotalPrice = this.createElementAttr('th',cartHeadRow,'cart__cell--heading');
         cartHeadProductTotalPrice.html('Total Price');
 
-        const cartConfirmOrder = new Button('Checkout', cartContent);
-        cartConfirmOrder.addClass('input-button');
-        cartConfirmOrder.attr({'id': 'cart__order-button'});
-        $nR('#cart__order-button').addEventListener('click', () => {
-            new Modal('Checkout', new Form().init());
-        })
 
         const itemsInCart = getLocalStorage('cart');
         
         for (let i = 0; i < itemsInCart.length; i++) {
             const cartItemRow = this.createElementAttr('tr', cartItemList,'cart__item-li',{'data-id': `${itemsInCart[i].id}`});
+
             const cartItemCellName = this.createElementAttr('td', cartItemRow,'cart__item-cell--name');
             cartItemCellName.html(`${itemsInCart[i].title}`);
+
             const cartItemCellQuantity = this.createElementAttr('td', cartItemRow,'cart__item-cell--quantity');
+            
             const cartItemNumberSelector = this.createElementAttr('input', cartItemCellQuantity,'cart__input-quantity',{'id': `${itemsInCart[i].id}`, 'type': 'number', 'value': `${itemsInCart[i].quantity}`, 'min': '1'});
+            
             const cartItemCellPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--price');
             cartItemCellPrice.html(`${itemsInCart[i].price}$`);
+            
             itemsInCart[i].totalPrice = itemsInCart[i].price * itemsInCart[i].quantity;
+            
             const cartItemCellTotalPrice = this.createElementAttr('td', cartItemRow,'cart__item-cell--total-price',{'data-id': `${itemsInCart[i].id}`});
             cartItemCellTotalPrice.html(`${itemsInCart[i].totalPrice}$`);
+            
             totalOrderSum += itemsInCart[i].totalPrice;     
+            
             const cartItemCellButton = this.createElementAttr('td', cartItemRow,'cart__item-cell--button');
             const cartItemRemoveButton = new Button('Remove', cartItemCellButton);
             cartItemRemoveButton.addClass('input-button--service');
@@ -94,8 +97,15 @@ export default class Cart extends Element {
             cartItemRemoveButton.click(cartRemoveButtonHandler);
         }
 
-        const totalOrderRow = this.createElementAttr('tr', cartContent,'cart__item--total-order-sum');
-        totalOrderRow.html(`Total order price: ${totalOrderSum}`);                          
+        const totalOrderRow = this.createElementAttr('p', cartContent,'cart__item--total-order-sum');
+        totalOrderRow.html(`Total order price: ${totalOrderSum}$`);                          
+
+        const cartConfirmOrder = new Button('Checkout', cartContent);
+        cartConfirmOrder.addClass('input-button');
+        cartConfirmOrder.attr({'id': 'cart__order-button'});
+        $nR('#cart__order-button').addEventListener('click', () => {
+            new Modal('Checkout', new Form().init());
+        });
 
         let inputsCollection = document.querySelectorAll('.cart__input-quantity');
         let itemTotalPriceCollection = document.querySelectorAll('.cart__item-cell--total-price');

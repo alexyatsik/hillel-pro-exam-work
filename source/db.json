@@ -3,11 +3,11 @@
         "categories" : {
             "computers": [
                 {
-                    "id": "123",
+                    "id": "1",
                     "title": "Custom Laptop Limited",
                     "price": "1000",
-                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "iconPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/a/c/acer_nitro_5_an515-54_black_011.jpg",
+                    "imgPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/a/c/acer_nitro_5_an515-54_black_011.jpg",
                     "characteristics": {
                         "cpu": "Intel I-5",
                         "ram": "8Gb",
@@ -15,11 +15,11 @@
                     }
                 },
                 {
-                    "id": "1223",
+                    "id": "2",
                     "title": "ASUS Laptop Limited",
                     "price": "4000",
-                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "iconPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/thumbnail/395x554/9df78eab33525d08d6e5fb8d27136e95/a/s/asus-x543ma-gq497-silver.jpg",
+                    "imgPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/thumbnail/395x554/9df78eab33525d08d6e5fb8d27136e95/a/s/asus-x543ma-gq497-silver.jpg",
                     "characteristics": {
                         "cpu": "Intel I-7",
                         "ram": "32Gb",
@@ -27,42 +27,191 @@
                     }
                 },
                 {
-                    "id": "12223",
+                    "id": "3",
                     "title": "LENOVO Laptop Limited",
                     "price": "800",
-                    "iconPath": "https://i.picsum.photos/id/1/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/1/100/150.jpg",
+                    "iconPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/l/e/lenovo_ideapad_330-15ich_81fk00gbra_platinum_grey_0_1_3_1_1_1_2.jpg",
+                    "imgPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/l/e/lenovo_ideapad_330-15ich_81fk00gbra_platinum_grey_0_1_3_1_1_1_2.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-8",
+                        "ram": "16Gb",
+                        "hd": "1Tr"
+                    } 
+                },
+                {
+                    "id": "4",
+                    "title": "Razer Laptop",
+                    "price": "1200",
+                    "iconPath": "https://images-na.ssl-images-amazon.com/images/I/71K7P66CGnL._AC_SL1500_.jpg",
+                    "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71K7P66CGnL._AC_SL1500_.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-7",
+                        "ram": "32Gb",
+                        "hd": "3Tr"
+                    }
+                },
+                {
+                    "id": "5",
+                    "title": "Acer Laptop",
+                    "price": "1100",
+                    "iconPath": "https://i2.rozetka.ua/goods/14504060/acer_nx_he3eu_02d_images_14504060631.jpg",
+                    "imgPath": "https://i2.rozetka.ua/goods/14504060/acer_nx_he3eu_02d_images_14504060631.jpg",
+                    "characteristics": {
+                        "cpu": "Intel I-5",
+                        "ram": "16Gb",
+                        "hd": "1Tr"
+                    }
+                },
+                {
+                    "id": "6",
+                    "title": "Acer Laptop Limited Eddition",
+                    "price": "900",
+                    "iconPath": "https://i.eldorado.ua/goods_images/1039096/6477645-1576049919.png",
+                    "imgPath": "https://i.eldorado.ua/goods_images/1039096/6477645-1576049919.png",
                     "characteristics": {
                         "cpu": "Intel I-3",
                         "ram": "8Gb",
-                        "hd": "500Gb"
+                        "hd": "1Tr"
                     }
                 }
             ],
             "cameras": [
                 {
-                    "id": "124",
-                    "title": "Custom Camera 100500GPX",
-                    "price": "1000",
-                    "iconPath": "https://i.picsum.photos/id/2/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/2/100/150.jpg",
+                    "id": "7",
+                    "title": "Sony",
+                    "price": "2000",
+                    "iconPath": "https://images.blackmagicdesign.com/images/products/blackmagicpocketcinemacamera/techspecs/hero/blackmagic-pocket-cinema-camera-6k-sm.jpg?_v=1561595599",
+                    "imgPath": "https://images.blackmagicdesign.com/images/products/blackmagicpocketcinemacamera/techspecs/hero/blackmagic-pocket-cinema-camera-6k-sm.jpg?_v=1561595599",
                     "characteristics": {
                         "mgpx": "50",
-                        "mirror": "yes",
-                        "convenient": "no",
-                        "other": "don't know"
+                        "mirror": "Yes"
+                    }
+                },
+                {
+                    "id": "8",
+                    "title": "Nikon 100500GPX",
+                    "price": "2400",
+                    "iconPath": "https://images-na.ssl-images-amazon.com/images/I/71uWjflifoL._AC_SL1500_.jpg",
+                    "imgPath": "https://images-na.ssl-images-amazon.com/images/I/71uWjflifoL._AC_SL1500_.jpg",
+                    "characteristics": {
+                        "mgpx": "60",
+                        "mirror": "No"
+                    }
+                },
+                {
+                    "id": "9",
+                    "title": "Canon GdfX",
+                    "price": "1100",
+                    "iconPath": "https://www.bhphotovideo.com/images/images1000x1000/canon_eos_r_mirrorless_digital_1433711.jpg",
+                    "imgPath": "https://www.bhphotovideo.com/images/images1000x1000/canon_eos_r_mirrorless_digital_1433711.jpg",
+                    "characteristics": {
+                        "mgpx": "40",
+                        "mirror": "Yes"
+                    }
+                },
+                {
+                    "id": "10",
+                    "title": "Nikon 87700GfX",
+                    "price": "1500",
+                    "iconPath": "https://static.bhphoto.com/images/images500x500/1483534103_1308820.jpg",
+                    "imgPath": "https://static.bhphoto.com/images/images500x500/1483534103_1308820.jpg",
+                    "characteristics": {
+                        "mgpx": "80",
+                        "mirror": "Yes"
+                    }
+                },
+                {
+                    "id": "11",
+                    "title": "Sony 1400GfX",
+                    "price": "1300",
+                    "iconPath": "https://group5.by/wp-content/uploads/2019/08/blackmagic_design_cinecampochdef6k_blackmagic_design_pocket_cinema_1499529.jpg",
+                    "imgPath": "https://group5.by/wp-content/uploads/2019/08/blackmagic_design_cinecampochdef6k_blackmagic_design_pocket_cinema_1499529.jpg",
+                    "characteristics": {
+                        "mgpx": "77",
+                        "mirror": "No"
+                    }
+                },
+                {
+                    "id": "12",
+                    "title": "Canon DEB-IL",
+                    "price": "1549",
+                    "iconPath": "https://images-na.ssl-images-amazon.com/images/I/81j0d8pNBFL._AC_SL1425_.jpg",
+                    "imgPath": "https://images-na.ssl-images-amazon.com/images/I/81j0d8pNBFL._AC_SL1425_.jpg",
+                    "characteristics": {
+                        "mgpx": "90",
+                        "mirror": "Yes"
                     }
                 }
             ],
             "hardware": [
                 {
-                    "id": "125",
+                    "id": "13",
                     "title": "Bosch PBH 2100 RE",
-                    "price": "50",
-                    "iconPath": "https://i.picsum.photos/id/3/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/3/100/150.jpg",
+                    "price": "150",
+                    "iconPath": "https://www.boschtools.com.ua/content/images/44/perforator-bosch-pbh-2500-re-18991305566525.jpg",
+                    "imgPath": "https://www.boschtools.com.ua/content/images/44/perforator-bosch-pbh-2500-re-18991305566525.jpg",
                     "characteristics": {
-                        "rotation speed": "2300",
+                        "rotation speed": "1300",
+                        "type": "SDS+",
+                        "Hit frequency": "5100"
+                    }
+                },
+                {
+                    "id": "14",
+                    "title": "Bosch PBH 2300SV",
+                    "price": "230",
+                    "iconPath": "https://static.dnipro-m.ua/cache/products/1223/catalog_origin_162437.jpg",
+                    "imgPath": "https://static.dnipro-m.ua/cache/products/1223/catalog_origin_162437.jpg",
+                    "characteristics": {
+                        "rotation speed": "2600",
+                        "type": "SDD",
+                        "Hit frequency": "3800"
+                    }
+                },
+                {
+                    "id": "15",
+                    "title": "Bosch SVV 1920",
+                    "price": "130",
+                    "iconPath": "https://i1.rozetka.ua/goods/2258033/bosch_professional_061190400b_images_2258033134.jpg",
+                    "imgPath": "https://i1.rozetka.ua/goods/2258033/bosch_professional_061190400b_images_2258033134.jpg",
+                    "characteristics": {
+                        "rotation speed": "1600",
+                        "type": "SDS+",
+                        "Hit frequency": "4800"
+                    }
+                },
+                {
+                    "id": "16",
+                    "title": "Bosch SV-G 2SS",
+                    "price": "330",
+                    "iconPath": "https://dewalt.top/image/cache/catalog/DCH133M1/DCH133_1min-600x600.jpg",
+                    "imgPath": "https://dewalt.top/image/cache/catalog/DCH133M1/DCH133_1min-600x600.jpg",
+                    "characteristics": {
+                        "rotation speed": "1700",
+                        "type": "SDD",
+                        "Hit frequency": "5340"
+                    }
+                },
+                {
+                    "id": "17",
+                    "title": "Bosch SMf LGD",
+                    "price": "530",
+                    "iconPath": "https://images.ua.prom.st/1966081173_w640_h640_1966081173.jpg",
+                    "imgPath": "https://images.ua.prom.st/1966081173_w640_h640_1966081173.jpg",
+                    "characteristics": {
+                        "rotation speed": "1700",
+                        "type": "SDS+",
+                        "Hit frequency": "5400"
+                    }
+                },
+                {
+                    "id": "18",
+                    "title": "Bosch C-ER Ld",
+                    "price": "125",
+                    "iconPath": "https://images.ua.prom.st/1057193027_w640_h640_1057193027.jpg",
+                    "imgPath": "https://images.ua.prom.st/1057193027_w640_h640_1057193027.jpg",
+                    "characteristics": {
+                        "rotation speed": "2700",
                         "type": "SDS+",
                         "Hit frequency": "5800"
                     }
@@ -70,88 +219,373 @@
             ],
             "smartphones": [
                 {
-                    "id": "126",
-                    "title": "Samsung Galaxy M31",
-                    "price": "55",
-                    "iconPath": "https://i.picsum.photos/id/4/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/4/100/150.jpg",
+                    "id": "19",
+                    "title": "Xiaomi Redmi 8",
+                    "price": "300",
+                    "iconPath": "https://i.allo.ua/media/catalog/product/cache/1/image/600x415/799896e5c6c37e11608b9f8e1d047d15/f/i/file_1296_1.jpg",
+                    "imgPath": "https://i.allo.ua/media/catalog/product/cache/1/image/600x415/799896e5c6c37e11608b9f8e1d047d15/f/i/file_1296_1.jpg",
+                    "characteristics": {
+                        "display": "5.2''",
+                        "resolution": "1080x600",
+                        "matrix type": "LED",
+                        "material": "Glass"
+                    }
+                },
+                {
+                    "id": "20",
+                    "title": "Apple 11 Pro",
+                    "price": "2000",
+                    "iconPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1125x700/62defc7f46f3fbfc8afcd112227d1181/a/p/apple_iphone_11_pro_64gb_midnight_green_1__2_2.jpg",
+                    "imgPath": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1125x700/62defc7f46f3fbfc8afcd112227d1181/a/p/apple_iphone_11_pro_64gb_midnight_green_1__2_2.jpg",
                     "characteristics": {
                         "display": "6.4''",
                         "resolution": "2340x1080",
                         "matrix type": "Super AMOLED",
                         "material": "Glass"
                     }
+                },
+                {
+                    "id": "21",
+                    "title": "Samsung Galaxy A2",
+                    "price": "500",
+                    "iconPath": "https://i.allo.ua/media/catalog/product/cache/1/image/600x415/799896e5c6c37e11608b9f8e1d047d15/f/i/file_1551_20.jpg",
+                    "imgPath": "https://i.allo.ua/media/catalog/product/cache/1/image/600x415/799896e5c6c37e11608b9f8e1d047d15/f/i/file_1551_20.jpg",
+                    "characteristics": {
+                        "display": "4.2''",
+                        "resolution": "1080x600",
+                        "matrix type": "LED",
+                        "material": "Plastic"
+                    }
+                },
+                {
+                    "id": "22",
+                    "title": "Nokia 3310",
+                    "price": "10500",
+                    "iconPath": "https://www.dhresource.com/0x0/f2/albu/g6/M00/39/09/rBVaR1pMlseAXo5GAAPBrUcdkrY558.jpg",
+                    "imgPath": "https://www.dhresource.com/0x0/f2/albu/g6/M00/39/09/rBVaR1pMlseAXo5GAAPBrUcdkrY558.jpg",
+                    "characteristics": {
+                        "display": "10.5''",
+                        "resolution": "12080x10600",
+                        "matrix type": "SUPER PUPER ULTRA LED",
+                        "material": "Obsidian"
+                    }
+                },
+                {
+                    "id": "23",
+                    "title": "Vertu",
+                    "price": "20",
+                    "iconPath": "https://originalwatches.net/uploads/Tovar/1/83/43/small/5_thumbnailImage_670x0_false.png",
+                    "imgPath": "https://originalwatches.net/uploads/Tovar/1/83/43/small/5_thumbnailImage_670x0_false.png",
+                    "characteristics": {
+                        "display": "1.2''",
+                        "resolution": "80x600",
+                        "matrix type": "Paper",
+                        "material": "Wood"
+                    }
+                },
+                {
+                    "id": "24",
+                    "title": "Nova TECH 3000 SUPER New Inovational",
+                    "price": "2000",
+                    "iconPath": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSBUqHhbMzs4wt5jMkzq4vc22f3kKKbPibGivFscRi2t1z-GST&usqp=CAU",
+                    "imgPath": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSBUqHhbMzs4wt5jMkzq4vc22f3kKKbPibGivFscRi2t1z-GST&usqp=CAU",
+                    "characteristics": {
+                        "display": "4.2''",
+                        "resolution": "1280x600",
+                        "matrix type": "TIN",
+                        "material": "Titan"
+                    }
                 }
             ],
             "tv": [
                 {
-                    "id": "127",
+                    "id": "25",
                     "title": "Samsung UE43N5000AUXUA",
-                    "price": "60",
-                    "iconPath": "https://i.picsum.photos/id/5/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/5/100/150.jpg",
+                    "price": "600",
+                    "iconPath": "https://images.samsung.com/is/image/samsung/ru-nu7002-ue50nu7002uxru-frontblack-170987880?$PD_GALLERY_L_JPG$",
+                    "imgPath": "https://images.samsung.com/is/image/samsung/ru-nu7002-ue50nu7002uxru-frontblack-170987880?$PD_GALLERY_L_JPG$",
                     "characteristics": {
                         "display": "43''",
                         "resolution": "1920x1080",
-                        "wi-fi": "Without Wi-Fi",
+                        "wi-fi": "No",
                         "color": "Black"
+                    }
+                },
+                {
+                    "id": "26",
+                    "title": "XIAOMI N5000AU",
+                    "price": "650",
+                    "iconPath": "https://images.samsung.com/is/image/samsung/ae-ru7300-ua55ru7300kxzn-frontblack-153432584?$PD_GALLERY_L_JPG$",
+                    "imgPath": "https://images.samsung.com/is/image/samsung/ae-ru7300-ua55ru7300kxzn-frontblack-153432584?$PD_GALLERY_L_JPG$",
+                    "characteristics": {
+                        "display": "43''",
+                        "resolution": "1920x1080",
+                        "wi-fi": "Yes",
+                        "color": "Grey"
+                    }
+                },
+                {
+                    "id": "27",
+                    "title": "Panasonic Ultra Wide",
+                    "price": "600000",
+                    "iconPath": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGBZt0rTt1Q3rg8dpxDFS9M3wC8VxnWPYW7tjBZqpQpB0DNqIW&usqp=CAU",
+                    "imgPath": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGBZt0rTt1Q3rg8dpxDFS9M3wC8VxnWPYW7tjBZqpQpB0DNqIW&usqp=CAU",
+                    "characteristics": {
+                        "display": "80''",
+                        "resolution": "29020x2080",
+                        "wi-fi": "Yes",
+                        "color": "Brown"
+                    }
+                },
+                {
+                    "id": "28",
+                    "title": "Sony UEN50UA",
+                    "price": "1200",
+                    "iconPath": "https://www.lg.com/ua/images/televisions/MD06154176/gallery/TV-UHD-60-55-49-43-UM71-B-Gallery-01-1100.jpg",
+                    "imgPath": "https://www.lg.com/ua/images/televisions/MD06154176/gallery/TV-UHD-60-55-49-43-UM71-B-Gallery-01-1100.jpg",
+                    "characteristics": {
+                        "display": "45''",
+                        "resolution": "1920x1080",
+                        "wi-fi": "No",
+                        "color": "Grey"
+                    }
+                },
+                {
+                    "id": "29",
+                    "title": "GALAXICAL ULTRA",
+                    "price": "1200620",
+                    "iconPath": "https://i.ytimg.com/vi/cvQfITq_I-M/hqdefault.jpg",
+                    "imgPath": "https://i.ytimg.com/vi/cvQfITq_I-M/hqdefault.jpg",
+                    "characteristics": {
+                        "display": "143''",
+                        "resolution": "23920x122080",
+                        "wi-fi": "4 FI-WI",
+                        "color": "Carton"
+                    }
+                },
+                {
+                    "id": "30",
+                    "title": "Apple TV ULTRA",
+                    "price": "360780",
+                    "iconPath": "https://i.pinimg.com/originals/f9/fa/63/f9fa632f081950bf48a00434a41caa84.jpg",
+                    "imgPath": "https://i.pinimg.com/originals/f9/fa/63/f9fa632f081950bf48a00434a41caa84.jpg",
+                    "characteristics": {
+                        "display": "43''",
+                        "resolution": "121920x12080",
+                        "wi-fi": "3 FI-WI",
+                        "color": "Beige"
                     }
                 }
             ],
-            "gadgets": [
+            "tablets": [
                 {
-                    "id": "128",
-                    "title": "Amazfit GTS",
-                    "price": "100",
-                    "iconPath": "https://i.picsum.photos/id/6/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/6/100/150.jpg",
+                    "id": "31",
+                    "title": "Sumsung T72",
+                    "price": "400",
+                    "iconPath": "https://images.samsung.com/is/image/samsung/ru-galaxy-tab-s5e-t720-sm-t720nzsaser-frontsilver-193817560?$PD_GALLERY_L_JPG$",
+                    "imgPath": "https://images.samsung.com/is/image/samsung/ru-galaxy-tab-s5e-t720-sm-t720nzsaser-frontsilver-193817560?$PD_GALLERY_L_JPG$",
                     "characteristics": {
                         "type": "Smart clock",
                         "matrix": "AMOLED",
-                        "resolution": "348x442",
+                        "resolution": "400x700",
                         "display": "1.65''"
+                    }
+                },
+                {
+                    "id": "32",
+                    "title": "Laser GTS",
+                    "price": "200",
+                    "iconPath": "https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/SYLSR10TAB_laser_10_android_16gb_tablet_mid_1090ips.jpg",
+                    "imgPath": "https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/SYLSR10TAB_laser_10_android_16gb_tablet_mid_1090ips.jpg",
+                    "characteristics": {
+                        "type": "Clock",
+                        "matrix": "AMOLED",
+                        "resolution": "300x600",
+                        "display": "2.65''"
+                    }
+                },
+                {
+                    "id": "33",
+                    "title": "HUAWEI",
+                    "price": "10",
+                    "iconPath": "https://images-na.ssl-images-amazon.com/images/I/511uhNHgrfL._SX425_.jpg",
+                    "imgPath": "https://images-na.ssl-images-amazon.com/images/I/511uhNHgrfL._SX425_.jpg",
+                    "characteristics": {
+                        "type": "Clock",
+                        "matrix": "AMOLED",
+                        "resolution": "400x700",
+                        "display": "1.65''"
+                    }
+                },
+                {
+                    "id": "34",
+                    "title": "Amazfit GTS",
+                    "price": "100",
+                    "iconPath": "https://www.notebookcheck.net/fileadmin/_processed_/2/5/csm_4_zu_3_Teaser_TREKSTOR_Surftab_Theatre_S11_7d126d352e.jpg",
+                    "imgPath": "https://www.notebookcheck.net/fileadmin/_processed_/2/5/csm_4_zu_3_Teaser_TREKSTOR_Surftab_Theatre_S11_7d126d352e.jpg",
+                    "characteristics": {
+                        "type": "Smart clock",
+                        "matrix": "AMOLED",
+                        "resolution": "300x600",
+                        "display": "2.65''"
                     }
                 }
             ],
-            "car electronics": [
+            "car music": [
                 {
-                    "id": "129",
+                    "id": "35",
                     "title": "Playme ELVA",
-                    "price": "40",
-                    "iconPath": "https://i.picsum.photos/id/7/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/7/100/150.jpg",
+                    "price": "440",
+                    "iconPath": "https://www.farsh.com.ua/media/catalog/product/cache/1c68161d81122c216050ec190dfbf237/s/h/shtatnaya-magnitola-audiosources-as-410-skoda-octavia-tour-skoda-superb.png",
+                    "imgPath": "https://www.farsh.com.ua/media/catalog/product/cache/1c68161d81122c216050ec190dfbf237/s/h/shtatnaya-magnitola-audiosources-as-410-skoda-octavia-tour-skoda-superb.png",
                     "characteristics": {
                         "gps": "no",
                         "sensor": "NTK96220",
-                        "resolution": "1920x1080",
-                        "Observation angle": "140deg"
+                        "resolution": "1920x1080"
+                    }
+                },
+                {
+                    "id": "36",
+                    "title": "Sony",
+                    "price": "520",
+                    "iconPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
+                    "imgPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
+                    "characteristics": {
+                        "gps": "yes",
+                        "sensor": "NTK9",
+                        "resolution": "400x600"
+                    }
+                },
+                {
+                    "id": "37",
+                    "title": "Samsung",
+                    "price": "40",
+                    "iconPath": "https://images.samsung.com/is/image/samsung/ca-uhdtv-nu8000-un65nu8000fxzc-frontblack-94543058?$PD_GALLERY_L_JPG$",
+                    "imgPath": "https://images.samsung.com/is/image/samsung/ca-uhdtv-nu8000-un65nu8000fxzc-frontblack-94543058?$PD_GALLERY_L_JPG$",
+                    "characteristics": {
+                        "gps": "no",
+                        "sensor": "NTK96220",
+                        "resolution": "1920x1080"
+                    }
+                },
+                {
+                    "id": "38",
+                    "title": "Maybach",
+                    "price": "4331253",
+                    "iconPath": "https://images.ua.prom.st/1402813629_w640_h640_avtomagnitola-magnitola-monitor.jpg",
+                    "imgPath": "https://images.ua.prom.st/1402813629_w640_h640_avtomagnitola-magnitola-monitor.jpg",
+                    "characteristics": {
+                        "gps": "yes",
+                        "sensor": "NTK9",
+                        "resolution": "400x600"
                     }
                 }
             ],
             "video games": [
                 {
-                    "id": "130",
-                    "title": "PlayStation 4",
-                    "price": "400",
-                    "iconPath": "https://i.picsum.photos/id/8/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/8/100/150.jpg",
+                    "id": "39",
+                    "title": "Dendy",
+                    "price": "4200",
+                    "iconPath": "https://c.dns-shop.ru/thumb/st4/fit/wm/800/650/9a71081957558da55880baec47ee90fe/aeb7d13f9ea8b10e5e6af90af176df05747c7f540429cc49776feb3af0eb3668.jpg",
+                    "imgPath": "https://c.dns-shop.ru/thumb/st4/fit/wm/800/650/9a71081957558da55880baec47ee90fe/aeb7d13f9ea8b10e5e6af90af176df05747c7f540429cc49776feb3af0eb3668.jpg",
                     "characteristics": {
                         "cpu": "AMD Jaguar",
                         "ram": "8 Gb GDDR5",
+                        "hard drive": "10 Tb",
+                        "video": "AMD RTX 480"
+                    }
+                },
+                {
+                    "id": "40",
+                    "title": "Sega Mega Drive II",
+                    "price": "8700",
+                    "iconPath": "https://i.ebayimg.com/images/g/LnUAAOSwAzxb7tR-/s-l300.jpg",
+                    "imgPath": "https://i.ebayimg.com/images/g/LnUAAOSwAzxb7tR-/s-l300.jpg",
+                    "characteristics": {
+                        "cpu": "Intel TIGER",
+                        "ram": "18 Gb GDDR3",
                         "hard drive": "1 Tb",
-                        "video": "AMD 1.84 Tf on Radeon's base of the next generation"
+                        "video": "GForce 2080"
+                    }
+                },
+                {
+                    "id": "41",
+                    "title": "Sega",
+                    "price": "4600",
+                    "iconPath": "https://hit930.sakura.ne.jp/hitjapan/console6/A30151780000.jpg",
+                    "imgPath": "https://hit930.sakura.ne.jp/hitjapan/console6/A30151780000.jpg",
+                    "characteristics": {
+                        "cpu": "AMD Jaguar",
+                        "ram": "8 Gb GDDR5",
+                        "hard drive": "10 Tb",
+                        "video": "AMD RTX 480"
+                    }
+                },
+                {
+                    "id": "42",
+                    "title": "Sega Mega Drive",
+                    "price": "122400",
+                    "iconPath": "https://ae01.alicdn.com/kf/HTB10gcBLMHqK1RjSZFPq6AwapXa4/RHAC01-16.jpg_q50.jpg",
+                    "imgPath": "https://ae01.alicdn.com/kf/HTB10gcBLMHqK1RjSZFPq6AwapXa4/RHAC01-16.jpg_q50.jpg",
+                    "characteristics": {
+                        "cpu": "Intel ALPACA",
+                        "ram": "18 Gb GDDR3",
+                        "hard drive": "1 Tb",
+                        "video": "GForce 2080"
                     }
                 }
             ],
             "accesories": [
                 {
-                    "id": "131",
-                    "title": "Logitech Wireless Presenter R400",
-                    "price": "70",
-                    "iconPath": "https://i.picsum.photos/id/9/50/50.jpg",
-                    "imgPath": "https://i.picsum.photos/id/9/100/150.jpg",
+                    "id": "43",
+                    "title": "DOQAUS Bluetooth",
+                    "price": "12",
+                    "iconPath": "https://images-na.ssl-images-amazon.com/images/I/61h6awrWALL._AC_SX466_.jpg",
+                    "imgPath": "https://images-na.ssl-images-amazon.com/images/I/61h6awrWALL._AC_SX466_.jpg",
                     "characteristics": {
                         "type": "Presenter",
+                        "compatibility": "Vista, 7, 8, 10m MacOS",
+                        "weight": "57g",
+                        "size": "37.8 x 115.5 x 27.4 mm",
+                        "color": "Black"
+                    }
+                },
+                {
+                    "id": "44",
+                    "title": "TANK SUPER HELMet",
+                    "price": "1253",
+                    "iconPath": "https://33.img.avito.st/640x480/6374257733.jpg",
+                    "imgPath": "https://33.img.avito.st/640x480/6374257733.jpg",
+                    "characteristics": {
+                        "type": "Full covered",
+                        "compatibility": "Vista, 7, 8, 10m MacOS",
+                        "weight": "12357g",
+                        "size": "37.8 x 115.5 x 27.4 mm",
+                        "color": "Black"
+                    }
+                },
+                {
+                    "id": "45",
+                    "title": "Pilot helmet phone",
+                    "price": "702",
+                    "iconPath": "https://warspot-asset.s3.amazonaws.com/articles/pictures/000/008/894/content/%D0%98%D0%BB%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%E2%84%9618.jpg",
+                    "imgPath": "https://warspot-asset.s3.amazonaws.com/articles/pictures/000/008/894/content/%D0%98%D0%BB%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%E2%84%9618.jpg",
+                    "characteristics": {
+                        "type": "Integral",
+                        "compatibility": "Vista, 7, 8, 10m MacOS",
+                        "weight": "5227g",
+                        "size": "37.8 x 115.5 x 27.4 mm",
+                        "color": "Khaki"
+                    }
+                },
+                {
+                    "id": "46",
+                    "title": "HALLO wireless head ",
+                    "price": "2330",
+                    "iconPath": "https://static-eu.insales.ru/images/products/1/3513/150711737/Halo_detskij_shlem_Master_Chif_4.jpg",
+                    "imgPath": "https://static-eu.insales.ru/images/products/1/3513/150711737/Halo_detskij_shlem_Master_Chif_4.jpg",
+                    "characteristics": {
+                        "type": "Full covered",
                         "compatibility": "Vista, 7, 8, 10m MacOS",
                         "weight": "57g",
                         "size": "37.8 x 115.5 x 27.4 mm",

@@ -51,19 +51,23 @@ export default class Feedback extends Component {
 
         const author = new Input('feedbackAuthor', form);
         author.attr({
-            'placeholder': '* John Doe'
+            'placeholder': '* John Doe',
+            'class': 'feedback-input'
         });
 
         const description = new Element('textarea', form);
         description.attr({
             'placeholder': '** Enter the feedback',
-            'name': 'feedbackDescription'
+            'name': 'feedbackDescription',
+            'class': 'feedback-textarea'
         });
 
         const addFeedbackBtn = new Button('Add feedback', form);
         addFeedbackBtn.attr({
-            'data-id': this.itemId
+            'data-id': this.itemId,
+            'class': 'feedback-button'
         });
+        addFeedbackBtn.addClass('input-button');
         addFeedbackBtn.click(this.addFeedback);
     }
 
@@ -133,9 +137,11 @@ export default class Feedback extends Component {
         const wrapper = new Element('div', root);
         wrapper.addClass('feedback-wrapper');
         const prev = new Button('<', wrapper);
+        prev.addClass('prev-button');
         const content = new Element('div', wrapper);
         content.html(slides[currentSlide].getElement().innerHTML);
         const next = new Button('>', wrapper);
+        next.addClass('next-button');
 
         root.getElement().addEventListener('click', event => {
             switch (event.target.value) {
