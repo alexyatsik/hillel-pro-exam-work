@@ -204,7 +204,7 @@ body{
     background: #3f6888bd;
     width: 100%;
     margin: 0 auto;
-    height: 600px;
+    height: 100vh;
 }
    
 .product {
@@ -215,7 +215,7 @@ body{
     justify-content: center;
     height: 250px;
     width: 200px;
-    margin: 10px 0 0 25px; 
+    margin: 10px 0 0 10px; 
     font-size: 10px;
     overflow: hidden;
     background-color: #fffefe6e;
@@ -310,6 +310,7 @@ body{
     width: 18px;
     height: 18px;
 }
+/* // "iconPath": "https://i.picsum.photos/id/1/50/50.jpg", */
 
 .cart__item-list {
     padding: 0;
