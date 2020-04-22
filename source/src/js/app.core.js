@@ -21,12 +21,7 @@ export default function init() {
         }
     }
     new ProductsList(products).init();
-
-    const categoryObj = {};
-    for(let key in db){
-        categoryObj.category = db[key];
-    }
-    new Categories(categoryObj.category);
+    new Categories();
 }
 
 /*function init_old() {
