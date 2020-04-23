@@ -36,7 +36,7 @@ export default class Cart extends Element {
     }
 
     createImageCounterBox() {
-        const itemsQuantity = getLocalStorage('cart').length;
+        const itemsQuantity = getLocalStorage('cart').length || 0;
         $nD('#cart-counter');
         const counterBox = new Element('div', $nR('#cart-wrap'));
         counterBox.addClass('cart__counter-box');

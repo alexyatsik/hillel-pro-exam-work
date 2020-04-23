@@ -5,107 +5,123 @@ import Element from './commons/Element';
 import Product from './Product';
 import ProductsList from './ProductsList';
 
-import { $nR, capitalize } from '../utils';
+import { $nR, capitalize, getLocalStorage, $nD } from '../utils';
 
 export default class Filter extends Component {
-    constructor(category, selectedCategory) {
-        super();
-        const filterObject = this.getFilterObject(category);
-        this.drawFilters(filterObject);
-        this.getProductsFromFilter(category);
-        this.toggleClass();
-        this.selectedCategory = selectedCategory;
-    }
-
-    getFilterObject(currentCategory) {
-        const filtersCollection = {};
-        const filtersCollectionKey = new Set();
-
-        currentCategory.forEach((obj) => {
-            Object.keys(obj.characteristics).forEach((key) => {
-                filtersCollectionKey.add(key);
-            })
+    constructor(category) {
+        super($nR('#filter'));
+        $nD('#filter-component');
+        this.addClass('filter');
+        this.attr({
+            'id': 'filter-component'
         });
 
-        filtersCollectionKey.forEach((keyMap) => {
-            filtersCollection[keyMap] = new Set();
+        this.currentCategory = category;
+        this.categoryProducts = this.getCategoryProducts(category);
+
+        this.init();
+        this.showFilters();
+
+        this.click(() => {
+            if (event.target.classList.contains('filter-item__value')) {
+                event.target.classList.toggle('clicked-filter');
+                this.init();
+            }
         });
-
-        currentCategory.forEach((obj) => {
-            filtersCollectionKey.forEach((keyMap) => {
-                if (obj.characteristics[keyMap]) {
-                    filtersCollection[keyMap].add(obj.characteristics[keyMap]);
-                }
-            })
-        })
-
-        return filtersCollection;
     }
 
-    drawFilters(filterObj) {
-        const filterBox = new Component($nR('#filter'));
-        filterBox.addClass('filter-category-wrap');
-        
-        for (let filterName in filterObj) {
-            const filterItemHead = new Element('h3', filterBox);
-            filterItemHead.addClass('filter-item__head');
-            filterItemHead.html(`${capitalize(filterName)}`);
-            const filterItemList = new Element('ul', filterBox);
-            filterItemList.addClass('filter-item__list');
-
-            for (let filterValue of filterObj[filterName]) {
-                const filterItemValue = new Element('li', filterItemList);
-                filterItemValue.addClass('filter-item__value');
-                filterItemValue.html(`${capitalize(filterValue)}`);
+    getCategoryProducts(category) {
+        const db = getLocalStorage('internetStorageDb');
+        for (let key in db) {
+            if (key = category) {
+                return db[key];
             }
         }
     }
 
-    getProductsFromFilter(currentCategory) {
-        const filtredProductsCollection = new Set();
-        let filtredProductsArray;
-        let itemList = document.querySelectorAll('.filter-item__list');
+    init() {
+        const productList = [];
+        const clicked = document.querySelectorAll('li.clicked-filter');
+        if (!clicked.length) {
+            for (let elem of this.categoryProducts) {
+                productList.push(new Product(elem, this.currentCategory));
+            }
+        } else {
 
-        itemList.forEach(item => {
-            item.addEventListener('click', e => {
-                let target = e.target.innerText;
-                
-                currentCategory.forEach(obj => {
-                    for (let key in obj.characteristics) {
-                        if (target === obj.characteristics[key] && !filtredProductsCollection.has(obj)) {
-                            filtredProductsCollection.add(obj);
-                            return filtredProductsArray = Array.from(filtredProductsCollection);
-                        } else if (target === obj.characteristics[key] && filtredProductsCollection.has(obj)) {
-                            filtredProductsCollection.delete(obj);
-                            return filtredProductsArray = Array.from(filtredProductsCollection);
-                        }
-                    }
-                })
+            const clickedFilters = [];
+            for (let i = 0; i < clicked.length; i++) {
+                clickedFilters.push({
+                    [clicked[i].parentElement.parentElement.previousElementSibling.textContent.toLowerCase()]: clicked[i].textContent 
+                });
+            }
 
-                let finalyProductArray = [];
+            const clikedProducts = this.getFilteredProducts(clickedFilters);
 
-                for(let elem of filtredProductsArray){ 
-                    finalyProductArray.push(new Product(elem, this.selectedCategory)); 
-                }
-
-                if(filtredProductsArray.length === 0){
-                    for(let obj of currentCategory){
-                        finalyProductArray.push(new Product(obj, this.selectedCategory));
-                    }
-                }
-
-                new ProductsList(finalyProductArray).init();
-            })
-        });
+            for (let elem of clikedProducts) {
+                productList.push(new Product(elem, this.currentCategory));
+            }
+        }
+        
+        new ProductsList(productList).init();
     }
 
-    toggleClass(){
-        let itemList = document.querySelectorAll('.filter-item__list');
-        itemList.forEach(item => {
-            item.addEventListener('click', e => {
-                let target = e.target;
-                target.classList.toggle('clicked-filter');
-            })
-        })
+    
+
+    getFilteredProducts(filters) {
+        const arr = new Set();
+
+        for (let filter of filters) {
+            for (let key in filter) {
+                for (let elem of this.categoryProducts) {
+                    if (elem.characteristics[key].toLowerCase() === filter[key].toLowerCase()) {
+                        arr.add(elem);
+                    }
+                }
+            }
+        }
+
+        return Array.from(arr);
+    }
+
+    getUniqueCharacteristics() {
+        const characteristics = new Set();
+        for (let elem of this.categoryProducts) {
+            for (let key in elem.characteristics) {
+                characteristics.add(key);
+            }
+        }
+        
+        return Array.from(characteristics);
+    }
+
+    getFilters(characteristic) {
+        const filters = new Set();
+        for (let elem of this.categoryProducts) {
+            filters.add(elem.characteristics[characteristic]);
+        }
+
+        return Array.from(filters);
+    }
+
+    showFilters() {
+        const characteristics = this.getUniqueCharacteristics();
+        const ul = new Element('ul', this.element);
+        ul.addClass('filter-item__list');
+        for (let elem of characteristics) {
+            const uniqueFiltersList = this.getFilters(elem);
+
+            const title = new Element('li', ul);
+            title.html(capitalize(elem));
+            title.addClass('filter-item__head');
+
+            const filters = new Element('li', ul);
+            const filtersList = new Element('ul', filters);
+            filtersList.addClass('filter-item__list');
+            for (let elem of uniqueFiltersList) {
+                const li = new Element('li', filtersList);
+                li.addClass('filter-item__value');
+                li.html(capitalize(elem));
+            }
+        }
     }
 }

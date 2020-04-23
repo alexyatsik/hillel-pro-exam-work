@@ -1,78 +1,43 @@
 'use strict';
 
 import Element from './commons/Element';
-import Product from './Product';
+import Component from './commons/Component';
 import Filter from './Filter';
-import ProductsList from './ProductsList';
 
-import { $nR, capitalize } from '../utils';
+import { $nR, capitalize, getLocalStorage } from '../utils';
 
-export default class Categories extends Element {
-    constructor(categories) {
-        super('nav', $nR('#category'))
+export default class Categories extends Component {
+    constructor() {
+        super($nR('#category'));
+        this.addClass('categories');
+        this.availableCategories = this.getAvailableCategories();
 
-        this.showCategories(categories);
-        this.showProducts(categories);
-        this.selectedCategory;
+        this.createCategoryList();
     }
 
-    showCategories = (categories) => {
-        const list = new Element('ul', this.element)
-        list.addClass('categories__list');
-
-        for (let key in categories) {
-            const itemLi = new Element('li', list);
-            itemLi.attr({'name': `${key}`});
-            itemLi.addClass('categories__item-li');
-            itemLi.html(`${capitalize(key)}`);
+    getAvailableCategories() {
+        const db = getLocalStorage('internetStorageDb');
+        const availableCategories = [];
+        for (let key in db) {
+            availableCategories.push(key);
         }
+        return availableCategories;
     }
 
-    showProducts = (categories) => {
-        $nR('.categories__list').addEventListener('click', (event) => {
-            let target = event.target;
-            if(target.classList.contains('categories__list')){
+    createCategoryList() {
+        const categoryList = new Element('ul', this.element);
+        categoryList.addClass('categories__list');
+        categoryList.click(() => {
+            if (!event.target.classList.contains('categories__item-li')) {
                 return;
             }
+            new Filter(event.target.textContent.toLowerCase());
+        });
 
-            document.getElementById('filter').innerHTML = '';
-            document.getElementById('filter').classList.remove('filter--hidden');
-            
-            let liCollection = document.querySelectorAll('.categories__item-li');
-            
-            for (let element of liCollection) {
-                element.classList.remove('clicked-category');
-                
-                if (!target.classList.contains('clicked-category')) {
-                    target.classList.add('clicked-category');
-                } 
-            }
-
-            let currentCategoryProducts = [];
-            let currentCategory = [];
-
-            for (let key in categories) {
-                if (target.getAttribute('name') === key) {
-                    for (let item of categories[key]) {
-                        currentCategoryProducts.push(new Product(item, key));
-                        this.selectedCategory = key;
-                        console.log(this.selectedCategory);
-
-                        let test = new Product(item, categories[key]);
-                        for (let key in test) {
-                            if (key === 'dataObj') {
-                                currentCategory.push(test[key]);
-                            }
-                        }
-                    }
-                }
-            }
-            if(target.classList.contains('categories__list')){
-                return;
-            } else  {
-                new Filter(currentCategory, this.selectedCategory);
-                new ProductsList(currentCategoryProducts).init();
-            }
-        })
+        for (let elem of this.availableCategories) {
+            const li = new Element('li', categoryList);
+            li.addClass('categories__item-li');
+            li.html(capitalize(elem));
+        }
     }
 }

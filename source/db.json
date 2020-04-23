@@ -153,7 +153,7 @@
                     "characteristics": {
                         "rotation speed": "1300",
                         "type": "SDS+",
-                        "Hit frequency": "5100"
+                        "hit frequency": "5100"
                     }
                 },
                 {
@@ -165,7 +165,7 @@
                     "characteristics": {
                         "rotation speed": "2600",
                         "type": "SDD",
-                        "Hit frequency": "3800"
+                        "hit frequency": "3800"
                     }
                 },
                 {
@@ -177,7 +177,7 @@
                     "characteristics": {
                         "rotation speed": "1600",
                         "type": "SDS+",
-                        "Hit frequency": "4800"
+                        "hit frequency": "4800"
                     }
                 },
                 {
@@ -189,7 +189,7 @@
                     "characteristics": {
                         "rotation speed": "1700",
                         "type": "SDD",
-                        "Hit frequency": "5340"
+                        "hit frequency": "5340"
                     }
                 },
                 {
@@ -201,7 +201,7 @@
                     "characteristics": {
                         "rotation speed": "1700",
                         "type": "SDS+",
-                        "Hit frequency": "5400"
+                        "hit frequency": "5400"
                     }
                 },
                 {
@@ -213,7 +213,7 @@
                     "characteristics": {
                         "rotation speed": "2700",
                         "type": "SDS+",
-                        "Hit frequency": "5800"
+                        "hit frequency": "5800"
                     }
                 }
             ],
@@ -287,8 +287,8 @@
                     "id": "24",
                     "title": "Nova TECH 3000 SUPER New Inovational",
                     "price": "2000",
-                    "iconPath": "https://lh3.googleusercontent.com/proxy/UOFq8hWrufjyqDZR0-mpPQpaDJ0oYc12Z7g3dLK6P6NLkWrdu2SUQ7VPmwcAaa9EIniofeM-IDeSjbRy2J_ow4mfqdrJyExdn3e7OQN8WAiAHG2nfGn5-ghXjA",
-                    "imgPath": "https://lh3.googleusercontent.com/proxy/UOFq8hWrufjyqDZR0-mpPQpaDJ0oYc12Z7g3dLK6P6NLkWrdu2SUQ7VPmwcAaa9EIniofeM-IDeSjbRy2J_ow4mfqdrJyExdn3e7OQN8WAiAHG2nfGn5-ghXjA",
+                    "iconPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
+                    "imgPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
                     "characteristics": {
                         "display": "4.2''",
                         "resolution": "1280x600",
@@ -460,8 +460,8 @@
                     "id": "37",
                     "title": "Samsung",
                     "price": "40",
-                    "iconPath": "https://lh3.googleusercontent.com/proxy/K4YdQVaJRxgZ1wvEnqsEberK5OJyqEAVASGd0e33gcnNFbjwEubIC7o-jdigcFNgfyVQiXfghV5QzwuUcDmqhf7VwKFzX7Uqq5cjAyusut6-HPECNOZnHVGCwcIiT2o4bHBTZT7eMap9zgZezWAoZ3fRWf7kew",
-                    "imgPath": "https://lh3.googleusercontent.com/proxy/K4YdQVaJRxgZ1wvEnqsEberK5OJyqEAVASGd0e33gcnNFbjwEubIC7o-jdigcFNgfyVQiXfghV5QzwuUcDmqhf7VwKFzX7Uqq5cjAyusut6-HPECNOZnHVGCwcIiT2o4bHBTZT7eMap9zgZezWAoZ3fRWf7kew",
+                    "iconPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
+                    "imgPath": "https://i1.rozetka.ua/goods/10206458/68238334_images_10206458595.png",
                     "characteristics": {
                         "gps": "no",
                         "sensor": "NTK96220",
