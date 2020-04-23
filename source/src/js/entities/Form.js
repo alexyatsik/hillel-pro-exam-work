@@ -12,7 +12,7 @@ export default class Form extends Element {
     constructor() {
         super('form', $nR('.modal-window'));
         this.addClass('confirm-form');
-        this.attr({'name' : 'form'});
+        this.attr({'name' : 'myForm'});
         this.drawForm();
     }
 
@@ -73,16 +73,15 @@ export default class Form extends Element {
             'house number' : /^\w{1,}$|^\w{1,} \w{1,}$/,
         }
 
-        const elements = document.form.elements;
-        const isFirstNameValid = isValid('first name', elements.firstName.value);
-        const isLastNameValid = isValid('last name', elements.lastName.value);
-        const isPhoneValid = isValid('phone', elements.phone.value);
-        const isEmailValid = isValid('e-mail', elements.email.value);
-        const isCountryValid = isValid('country', elements.country.value);
-        const isCityValid = isValid('city', elements.city.value);
-        const isPostalCodeValid = isValid('postal code', elements.postalCode.value);
-        const isStreetValid = isValid('street', elements.street.value);
-        const isHouseNumberValid = isValid('house number', elements.house.value);
+        const isFirstNameValid = isValid('first name', document.myForm.elements.firstName.value);
+        const isLastNameValid = isValid('last name', document.myForm.elements.lastName.value);
+        const isPhoneValid = isValid('phone', document.myForm.elements.phone.value);
+        const isEmailValid = isValid('e-mail', document.myForm.elements.email.value);
+        const isCountryValid = isValid('country', document.myForm.elements.country.value);
+        const isCityValid = isValid('city', document.myForm.elements.city.value);
+        const isPostalCodeValid = isValid('postal code', document.myForm.elements.postalCode.value);
+        const isStreetValid = isValid('street', document.myForm.elements.street.value);
+        const isHouseNumberValid = isValid('house number', document.myForm.elements.house.value);
 
         function check(valid,id,elClass){
             if(!valid){
@@ -94,7 +93,6 @@ export default class Form extends Element {
                 document.querySelector(elClass).classList.remove('error-input');
                 isValidated = true;
             }
-
             return isValidated;
         }
 
@@ -109,7 +107,7 @@ export default class Form extends Element {
         check(isHouseNumberValid,'#house','.input-house');
 
         if(isValidated){
-            new Modal('Order completed', new DeliveryConfirmed(elements.firstName.value,elements.lastName.value).getElement());
+            new Modal('Order completed', new DeliveryConfirmed(document.myForm.elements.firstName.value,document.myForm.elements.lastName.value).getElement());
         }
     }
 
