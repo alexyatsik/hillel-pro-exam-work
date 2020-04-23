@@ -57,15 +57,8 @@ export default class Product extends Component {
             'class': 'card-image',
         });
 
-        // const title = new Element('span', this.element);
-        // title.html(`${this.dataObj.title}`);
-
-
-
         const cardDescriptionWrap = new Element('div', cardContentWrap);
         cardDescriptionWrap.addClass('card-description-wrap');
-
-
 
         const characteristics = new Element('ul', cardDescriptionWrap);
         characteristics.addClass('card-characteristics');

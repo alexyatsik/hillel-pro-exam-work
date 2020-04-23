@@ -55,8 +55,6 @@ export default class Form extends Element {
     }
 
     validation = () => {
-        let isValidated = false;
-
         function isValid(key, value){
             return expressions[key].test(value);
         }
@@ -84,29 +82,49 @@ export default class Form extends Element {
         const isHouseNumberValid = isValid('house number', document.myForm.elements.house.value);
 
         function check(valid,id,elClass){
+            let flag;
             if(!valid){
                 document.querySelector(id).classList.remove('error-message-hidden');
                 document.querySelector(elClass).classList.add('error-input');
-                isValidated = false;
+                flag = false;
             } else {
                 document.querySelector(id).classList.add('error-message-hidden');
                 document.querySelector(elClass).classList.remove('error-input');
-                isValidated = true;
+                flag = true;
             }
-            return isValidated;
+            return flag;
         }
 
-        check(isFirstNameValid,'#first-name','.input-first-name');
-        check(isLastNameValid,'#last-name','.input-last-name');
-        check(isPhoneValid,'#phone','.input-phone');
-        check(isEmailValid,'#email','.input-mail');
-        check(isCountryValid,'#country','.input-country');
-        check(isCityValid,'#city','.input-city');
-        check(isPostalCodeValid,'#postal-code','.input-postal');
-        check(isStreetValid,'#street','.input-street');
-        check(isHouseNumberValid,'#house','.input-house');
+        function isValidatedAll() {
+            let flag = true;
+            if (
+                !check(isFirstNameValid,'#first-name','.input-first-name') ||
+                !check(isLastNameValid,'#last-name','.input-last-name') ||
+                !check(isPhoneValid,'#phone','.input-phone') ||
+                !check(isEmailValid,'#email','.input-mail') ||
+                !check(isCountryValid,'#country','.input-country') ||
+                !check(isCityValid,'#city','.input-city') ||
+                !check(isPostalCodeValid,'#postal-code','.input-postal') ||
+                !check(isStreetValid,'#street','.input-street') ||
+                !check(isHouseNumberValid,'#house','.input-house')
+            ) {
+                flag = false;
+            }
 
-        if(isValidated){
+            check(isFirstNameValid,'#first-name','.input-first-name');
+            check(isLastNameValid,'#last-name','.input-last-name');
+            check(isPhoneValid,'#phone','.input-phone');
+            check(isEmailValid,'#email','.input-mail');
+            check(isCountryValid,'#country','.input-country');
+            check(isCityValid,'#city','.input-city');
+            check(isPostalCodeValid,'#postal-code','.input-postal');
+            check(isStreetValid,'#street','.input-street');
+            check(isHouseNumberValid,'#house','.input-house');
+
+            return flag;
+        }
+
+        if(isValidatedAll()){
             new Modal('Order completed', new DeliveryConfirmed(document.myForm.elements.firstName.value,document.myForm.elements.lastName.value).getElement());
         }
     }
