@@ -52,6 +52,10 @@ export default class Cart extends Element {
     }
 
     showCartInterface = () => {   
+        if (!getLocalStorage('cart').length) {
+            return;
+        }
+
         let totalOrderSum = 0;
 
         const cartContent = this.createElementAttr('div',$nR('#cart-wrap'),'cart__content-box',{'id': 'cart-contentBox'});
