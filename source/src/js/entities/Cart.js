@@ -52,9 +52,7 @@ export default class Cart extends Element {
     }
 
     showCartInterface = () => {   
-        if (!getLocalStorage('cart').length) {
-            return;
-        }
+        
 
         let totalOrderSum = 0;
 
@@ -108,6 +106,9 @@ export default class Cart extends Element {
         cartConfirmOrder.addClass('input-button');
         cartConfirmOrder.attr({'id': 'cart__order-button'});
         $nR('#cart__order-button').addEventListener('click', () => {
+            if (!getLocalStorage('cart').length) {
+                return;
+            }
             new Modal('Checkout', new Form().init());
         });
 
